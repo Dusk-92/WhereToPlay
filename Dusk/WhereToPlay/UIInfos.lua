@@ -25,7 +25,7 @@ function CreateInfosWindow()
 	-- center window
 	------------------------------------------------------------------------------------------
 
-	Texte1 = Turbine.UI.Label();
+	local Texte1 = Turbine.UI.Label();
 	Texte1:SetParent(InfosWindow); 
 	Texte1:SetSize(250, 50); 
 	Texte1:SetPosition(25, 40); 
@@ -35,7 +35,7 @@ function CreateInfosWindow()
 	Texte1:SetText( Strings.PluginName );
 	Texte1:SetZOrder(1);
 
-	Texte2 = Turbine.UI.Label();
+	local Texte2 = Turbine.UI.Label();
 	Texte2:SetParent(InfosWindow); 
 	Texte2:SetSize(250, 50); 
 	Texte2:SetPosition(25, 75); 
@@ -45,7 +45,7 @@ function CreateInfosWindow()
 	Texte2:SetText("V " .. tostring(Plugins[pluginName]:GetVersion())); 
 	Texte2:SetZOrder(1);
 
-	Texte2 = Turbine.UI.Label();
+	local Texte2 = Turbine.UI.Label();
 	Texte2:SetParent(InfosWindow); 
 	Texte2:SetSize(250, 50); 
 	Texte2:SetPosition(25, 110); 
