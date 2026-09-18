@@ -749,20 +749,20 @@ datasArtifactTier15 = {1092926431,
 -- Resource icon IDs are intentionally left empty until verified from the LOTRO client.
 -- This keeps the T16 farming window safe instead of using guessed IDs.
 datasArtifactTier16 = {};
-datasArtifactLocationTier16 = {"M\195\187r Ghala, Hatok\195\161li-H\195\188gel"};
+datasArtifactLocationTier16 = {"M\195\187r Ghala (Adag\195\173m, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) und Hatok\195\161li-H\195\188gel"};
 datasOreTier16 = {};
-datasOreLocationTier16 = {"M\195\187r Ghala, Hatok\195\161li-H\195\188gel"};
+datasOreLocationTier16 = {"M\195\187r Ghala (Adag\195\173m, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) und Hatok\195\161li-H\195\188gel"};
 datasWoodTier16 = {};
-datasWoodLocationTier16 = {"M\195\187r Ghala, Hatok\195\161li-H\195\188gel"};
+datasWoodLocationTier16 = {"M\195\187r Ghala (Adag\195\173m, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) und Hatok\195\161li-H\195\188gel"};
 datasHideTier16 = {};
-datasHideLocationTier16 = {"M\195\187r Ghala, Hatok\195\161li-H\195\188gel"};
+datasHideLocationTier16 = {"M\195\187r Ghala (Adag\195\173m, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) und Hatok\195\161li-H\195\188gel"};
 datasRareTier16 = {};
-datasRareLocationTier16 = {"M\195\187r Ghala, Hatok\195\161li-H\195\188gel"};
-datasArtifactNamesTier16 = {};
-datasOreNamesTier16 = {};
-datasWoodNamesTier16 = {};
-datasHideNamesTier16 = {};
-datasRareNamesTier16 = {};
+datasRareLocationTier16 = {"M\195\187r Ghala und Hatok\195\161li-H\195\188gel"};
+datasArtifactNamesTier16 = {"Damaged Murai Artifact", "Recorded Lore of M\195\187r Ghala"};
+datasOreNamesTier16 = {"Silvered Ore Deposit", "Rich Silvered Ore Deposit", "Polished Garnets"};
+datasWoodNamesTier16 = {"Teak Branches", "Heavy Teak Branches"};
+datasHideNamesTier16 = {"Brushed M\195\186rai Leather"};
+datasRareNamesTier16 = {"Golden Bery"};
 ----
 --[[
 ---- Tier empty
