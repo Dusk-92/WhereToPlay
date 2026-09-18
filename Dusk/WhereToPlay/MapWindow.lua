@@ -11,10 +11,10 @@ function CreateMapWindow(i)
 	if(zone == nil or zone.mapHex == nil or zone.mapHex == 0)then
 		return;
 	end
-    width = 1044;
-    height = 808;
+    local width = 1044;
+    local height = 808;
 
-    windowWidth, windowHeight = Turbine.UI.Display:GetSize();
+    local windowWidth, windowHeight = Turbine.UI.Display:GetSize();
 
     MapWindow=Turbine.UI.Lotro.GoldWindow(); 
     MapWindow:SetSize(windowWidth, windowHeight); 
@@ -27,14 +27,14 @@ function CreateMapWindow(i)
     settings["isMapWindowVisible"]["value"] = true;
     MapWindow:SetWantsKeyEvents(true);
 
-    mapLabel = Turbine.UI.Label();
+    local mapLabel = Turbine.UI.Label();
     mapLabel:SetPosition(10, 30);
     mapLabel:SetSize(1024, 768);
     mapLabel:SetBackground(ZonesNamesAndLevel["zones" .. i].mapHex);
     mapLabel:SetParent(MapWindow);
     mapLabel:SetVisible(true);
 
-    WhereToPlayerDatas=Turbine.UI.Label(); 
+    local WhereToPlayerDatas=Turbine.UI.Label(); 
 	WhereToPlayerDatas:SetParent(MapWindow); 
 	WhereToPlayerDatas:SetSize(200,20); 
 	WhereToPlayerDatas:SetPosition(804, 780); 
@@ -46,7 +46,7 @@ function CreateMapWindow(i)
 	WhereToPlayerDatas:SetZOrder(12);
 
 
-    buttonValider = Turbine.UI.Lotro.GoldButton();
+    local buttonValider = Turbine.UI.Lotro.GoldButton();
 	buttonValider:SetParent( MapWindow );
 	buttonValider:SetPosition(400, 776);
 	buttonValider:SetSize( 300, 20 );
