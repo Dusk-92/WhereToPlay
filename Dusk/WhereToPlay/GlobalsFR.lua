@@ -17,29 +17,29 @@ function CreateLocalizationInfo()
 	Strings.PluginAltDesable = "Touche Alt desactiv\195\169";
 	Strings.PluginToggleOn = "Basculage de la fen\195\170tre ON";
 	Strings.PluginToggleOff = "Basculage de la fen\195\170tre OFF";
-	Strings.PluginEscIconOn = "Affiche l'icone";
-	Strings.PluginEscIconOff = "Masque l'icone";
-	Strings.PluginWindowShow = "Affiche la fen\195\168tre.";
-	Strings.PluginWindowHide = "Cache la fen\195\168tre.";
+	Strings.PluginEscIconOn = "Affiche l'ic\195\180ne";
+	Strings.PluginEscIconOff = "Masque l'ic\195\180ne";
+	Strings.PluginWindowShow = "Affiche la fen\195\170tre.";
+	Strings.PluginWindowHide = "Cache la fen\195\170tre.";
 	Strings.PluginDateUpdate = "18.09.2026";
 	Strings.PluginUnloaded = "Plugin d\195\169charg\195\169";
 	------------------------------------------------------------------------------------------
 	-- help --
 	------------------------------------------------------------------------------------------
 	Strings.PluginHelp1 = "\n\nListe des commandes:\n";
-	Strings.PluginHelp2 = "/WTP help - affiche la fen\195\168tre. d'aide\n";
+	Strings.PluginHelp2 = "/WTP help - affiche la fen\195\170tre d'aide.\n";
 	Strings.PluginHelp3 = "/WTP show - affiche la fen\195\170tre.\n";
 	Strings.PluginHelp4 = "/WTP hide - cache la fen\195\170tre.\n";
-	Strings.PluginHelp5 = "/WTP esc - Active ou d\195\169sactive la touche Escape.\n";
-	Strings.PluginHelp6 = "/WTP alt - Active ou d\195\169sactive la touche alt pour le d\195\169placement de l'icon.\n";
-	Strings.PluginHelp7 = "/WTP options - affiche la fen\195\168tre d'options.\n";
-	Strings.PluginHelp8 = "/WTP toggle - Basculer la fen\195\170tre.\n";
-	Strings.PluginHelp9 = "/WTP icon - Affiche ou masque l'icone.\n\n";
-	Strings.PluginHelp10 = "Vous pouvez cliquer sur le nom d'une r\195\169gion pour ouvrir la carte de cette r\195\169gion\n";
-	Strings.PluginHelp11 = "Vous pouvez faire un clic droit sur l'ic\195\180ne principale pour afficher la fen\195\170tre d'options\010";
-	Strings.PluginHelp12 = "Vous pouvez cliquer sur l'icon du sac de Tier pour afficher les mat\195\169riaux r\195\169coltable dans la zone.\n";
+	Strings.PluginHelp5 = "/WTP esc - active ou d\195\169sactive la touche Escape.\n";
+	Strings.PluginHelp6 = "/WTP alt - active ou d\195\169sactive la touche Alt pour d\195\169placer l'ic\195\180ne.\n";
+	Strings.PluginHelp7 = "/WTP options - affiche la fen\195\170tre d'options.\n";
+	Strings.PluginHelp8 = "/WTP toggle - affiche ou masque la fen\195\170tre.\n";
+	Strings.PluginHelp9 = "/WTP icon - affiche ou masque l'ic\195\180ne.\n\n";
+	Strings.PluginHelp10 = "Vous pouvez cliquer sur le nom d'une r\195\169gion pour ouvrir sa carte.\n";
+	Strings.PluginHelp11 = "Vous pouvez faire un clic droit sur l'ic\195\180ne principale pour afficher la fen\195\170tre d'options.\n";
+	Strings.PluginHelp12 = "Vous pouvez cliquer sur l'ic\195\180ne du sac de tier pour afficher les mat\195\169riaux r\195\169coltables dans la zone.\n";
 	Strings.PluginCloseButton = "Fermer la fen\195\170tre";
-Strings.PluginInfosTitle = "Informations";
+	Strings.PluginInfosTitle = "Informations";
 	------------------------------------------------------------------------------------------
 	-- farm window --
 	------------------------------------------------------------------------------------------
@@ -82,10 +82,10 @@ Strings.PluginInfosTitle = "Informations";
 	------------------------------------------------------------------------------------------
 	Strings.PluginOptionsText = "Options de WhereToPlay";
 	Strings.PluginOption1 = "Afficher le tier des mat\195\169riaux r\195\169coltables";
-	Strings.PluginOption2 = "Afficher l'icone";
+	Strings.PluginOption2 = "Afficher l'ic\195\180ne";
 	Strings.PluginOption3 = "Afficher les instances du monde";
 	Strings.PluginOptionValidate = "Valider les changements";
-	Strings.PluginOptionShowWindow = "Affiche la fen\195\168tre d'options";
+	Strings.PluginOptionShowWindow = "Affiche la fen\195\170tre d'options";
 	------------------------------------------------------------------------------------------
 	-- zones --
 	-- lors de l'ajout d'une nouvelle zone-- ne pas oublie de mettre a jour la function 
