@@ -7,6 +7,10 @@
 -- create the window
 ------------------------------------------------------------------------------------------
 function CreateInstanceWindow(i)
+	-- Legacy instance data are not shipped with the plugin. Fail safely if this old feature is re-enabled.
+	if(type(datasInstances) ~= "table")then
+		return;
+	end
     local width = 500;
     local height = 800;
 	local title = "Instances"
@@ -15,7 +19,7 @@ function CreateInstanceWindow(i)
 
     InstanceWindow=Turbine.UI.Lotro.GoldWindow(); 
     InstanceWindow:SetSize(windowWidth, windowHeight); 
-    InstanceWindow:SetPosition(windowWidth / 2 - width / 2, (windowHeight / 2 - height / 2) - 20);
+    InstanceWindow:SetPosition(math.max(0, windowWidth / 2 - width / 2), math.max(0, (windowHeight / 2 - height / 2) - 20));
     InstanceWindow:SetSize(width, height);
     InstanceWindow:SetBlendMode(Turbine.UI.BlendMode.Undefined);
     --InstanceWindow:SetBackColor(Turbine.UI.Color(1, 0, 0, 0));
