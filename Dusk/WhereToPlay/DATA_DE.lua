@@ -714,20 +714,20 @@ datasArtifactTier14 = {1092695114,
 --- datas Tier 15
 datasArtifactTier15 = {1092926431,
 						1092926446};
-	datasArtifactLocationTier15 = {"K\195\182nigliches Gondor, Umbar"};
+	datasArtifactLocationTier15 = {"K\195\182nigliches Gondor, Umbar, Ikorb\195\162n-Tal"};
 
 	datasOreTier15 = {1092926432,
 							1092926429,
 							1092926434,
 							1092926436};
-	datasOreLocationTier15 = {"K\195\182nigliches Gondor, Umbar"};
+	datasOreLocationTier15 = {"K\195\182nigliches Gondor, Umbar, Ikorb\195\162n-Tal"};
 
 	datasWoodTier15 = {1092926438,
 							1092926445};
-	datasWoodLocationTier15 = {"K\195\182nigliches Gondor, Umbar"};
+	datasWoodLocationTier15 = {"K\195\182nigliches Gondor, Umbar, Ikorb\195\162n-Tal"};
 
 	datasHideTier15 = {1092926433};
-	datasHideLocationTier15 = {"K\195\182nigliches Gondor, Umbar"};
+	datasHideLocationTier15 = {"K\195\182nigliches Gondor, Umbar, Ikorb\195\162n-Tal"};
 
 	datasRareTier15 = {1092926436};
 	datasRareLocationTier15 = {"Gefunden in Resource Spawns oder Barter"};
@@ -749,15 +749,15 @@ datasArtifactTier15 = {1092926431,
 -- Resource icon IDs are intentionally left empty until verified from the LOTRO client.
 -- This keeps the T16 farming window safe instead of using guessed IDs.
 datasArtifactTier16 = {};
-datasArtifactLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasArtifactLocationTier16 = {"M\195\187r Ghala, Hatok\195\161li-H\195\188gel"};
 datasOreTier16 = {};
-datasOreLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasOreLocationTier16 = {"M\195\187r Ghala, Hatok\195\161li-H\195\188gel"};
 datasWoodTier16 = {};
-datasWoodLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasWoodLocationTier16 = {"M\195\187r Ghala, Hatok\195\161li-H\195\188gel"};
 datasHideTier16 = {};
-datasHideLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasHideLocationTier16 = {"M\195\187r Ghala, Hatok\195\161li-H\195\188gel"};
 datasRareTier16 = {};
-datasRareLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasRareLocationTier16 = {"M\195\187r Ghala, Hatok\195\161li-H\195\188gel"};
 datasArtifactNamesTier16 = {};
 datasOreNamesTier16 = {};
 datasWoodNamesTier16 = {};
