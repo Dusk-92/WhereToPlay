@@ -27,7 +27,7 @@ function CreateMainWindow()
 	WhereToPlay:SetWantsKeyEvents(true);
 	WhereToPlay:SetWantsUpdates(true);
 
-	WhereToPlay:SetPosition(settings["windowPosition"]["xPos"], settings["windowPosition"]["yPos"]);
+	local windowX, windowY = ClampToScreen(settings["windowPosition"]["xPos"], settings["windowPosition"]["yPos"], windowWidth, heightWind);\n\tWhereToPlay:SetPosition(windowX, windowY);\n\tsettings["windowPosition"]["xPos"] = windowX;\n\tsettings["windowPosition"]["yPos"] = windowY;
 	
 	local listbox = Turbine.UI.ListBox();
     listbox:SetParent( WhereToPlay );
@@ -112,7 +112,7 @@ function CreateMainWindow()
 		WhereToPlayZoneName[i]:SetParent(listItem); 
 		WhereToPlayZoneName[i]:SetSize(318,20); 
 		WhereToPlayZoneName[i]:SetPosition(posx, posy); 
-		WhereToPlayZoneName[i]:SetTextAlignment(Turbine.UI.ContentAlignment.Middleleft); 
+		WhereToPlayZoneName[i]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft); 
 		WhereToPlayZoneName[i]:SetFont(Turbine.UI.Lotro.Font.BookAntiquaBold19);
 
 		-- Visual hierarchy: arrow for a main region, bullet for a sub-zone.
@@ -178,7 +178,7 @@ function CreateMainWindow()
 		------------------------------------------------------------------------------------------
 		valLvl = ReturnValueLevel(i);
 
-		if(settings["playerLvl"]["value"] >= tonumber(valLvl[1]) and settings["playerLvl"]["value"] <= tonumber(valLvl[2]))then
+		if(IsLevelInZoneRange(settings["playerLvl"]["value"], ZonesNamesAndLevel["zones" .. i].lvl))then
 			WhereToPlayZoneName[i]:SetBackColor(Turbine.UI.Color( .9, .5, .7, .5));
 			WhereToPlayZoneName[i]:SetForeColor(Turbine.UI.Color.Black);
 		else
@@ -206,12 +206,12 @@ function CreateMainWindow()
 		WhereToPlayZoneLvl:SetParent(listItem); 
 		WhereToPlayZoneLvl:SetSize(100,20); 
 		WhereToPlayZoneLvl:SetPosition(posx + 380, posy); 
-		WhereToPlayZoneLvl:SetTextAlignment(Turbine.UI.ContentAlignment.Middleleft); 
+		WhereToPlayZoneLvl:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft); 
 		WhereToPlayZoneLvl:SetFont(Turbine.UI.Lotro.Font.BookAntiquaBold19);
 		WhereToPlayZoneLvl:SetForeColor(Turbine.UI.Color.Gold);
 		WhereToPlayZoneLvl:SetText("lvl    " .. ZonesNamesAndLevel["zones" .. i].lvl); 
 
-		if(settings["playerLvl"]["value"] >= tonumber(valLvl[1]) and settings["playerLvl"]["value"] <= tonumber(valLvl[2]))then
+		if(IsLevelInZoneRange(settings["playerLvl"]["value"], ZonesNamesAndLevel["zones" .. i].lvl))then
 			WhereToPlayZoneLvl:SetForeColor(Turbine.UI.Color.Lime);
 		else
 			WhereToPlayZoneLvl:SetForeColor(Turbine.UI.Color.Gold);
