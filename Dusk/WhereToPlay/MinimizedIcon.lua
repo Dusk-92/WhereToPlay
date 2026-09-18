@@ -13,7 +13,7 @@ function MinimizedIcon:Constructor(image, width, height)
 
 	self:SetOpacity( 1 );
 	self:SetVisible(true);
-	self:SetZOrder(10000); -- Always in front
+	self:SetZOrder(0); -- Normal stacking: do not force the icon above other windows
 	self:SetMouseVisible(true);
 	self:SetWantsUpdates(false);
 
