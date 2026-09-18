@@ -712,20 +712,20 @@ datasArtifactTier14 = {1092695114,
 --- datas Tier 15
 datasArtifactTier15 = {1092926431,
 						1092926446};
-	datasArtifactLocationTier15 = {"Royal Gondor, Umbar, Valley of Ikorb\195\162n"};
+	datasArtifactLocationTier15 = {"King's Gondor, Outer Gondor, Shield Isles, Umbar, Valley of Ikorb\195\162n"};
 
 	datasOreTier15 = {1092926432,
 							1092926429,
 							1092926434,
 							1092926436};
-	datasOreLocationTier15 = {"Royal Gondor, Umbar, Valley of Ikorb\195\162n"};
+	datasOreLocationTier15 = {"King's Gondor, Outer Gondor, Shield Isles, Umbar, Valley of Ikorb\195\162n"};
 
 	datasWoodTier15 = {1092926438,
 							1092926445};
-	datasWoodLocationTier15 = {"Royal Gondor, Umbar, Valley of Ikorb\195\162n"};
+	datasWoodLocationTier15 = {"King's Gondor, Outer Gondor, Shield Isles, Umbar, Valley of Ikorb\195\162n"};
 
 	datasHideTier15 = {1092926433};
-	datasHideLocationTier15 = {"Royal Gondor, Umbar, Valley of Ikorb\195\162n"};
+	datasHideLocationTier15 = {"King's Gondor, Outer Gondor, Shield Isles, Umbar, Valley of Ikorb\195\162n"};
 
 	datasRareTier15 = {1092926436};
 	datasRareLocationTier15 = {"Found in Resource Spawns or Barter"};
