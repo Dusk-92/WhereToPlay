@@ -16,16 +16,13 @@ CreateLocalizationInfo();
 ------------------------------------------------------------------------------------------
 CreateMainWindow();
 ------------------------------------------------------------------------------------------
--- handle minimizeIcon
+-- handle minimized icon
 ------------------------------------------------------------------------------------------
-if(settings["isWindowVisible"]["isWindowVisible"] == true)then
-	MainMinimizedIcon = MinimizedIcon(Images.MinimizedIcon, 32, 32, WhereToPlay:SetVisible(true));
-else
-	MainMinimizedIcon = MinimizedIcon(Images.MinimizedIcon, 32, 32, WhereToPlay:SetVisible(false));
-end
+WhereToPlay:SetVisible(settings["isWindowVisible"]["isWindowVisible"]);
 
+MainMinimizedIcon = MinimizedIcon(Images.MinimizedIcon, 32, 32);
 MainMinimizedIcon:SetPosition(settings["IconPosition"]["xPosIcon"], settings["IconPosition"]["yPosIcon"]);
-MainMinimizedIcon:SetZOrder(0);
+MainMinimizedIcon:SetVisible(settings["isMinimizeEnabled"]["isMinimizeEnabled"]);
 MainMinimizedIcon.PositionChanged = function()
 	settings["IconPosition"]["xPosIcon"] = MainMinimizedIcon:GetLeft();
 	settings["IconPosition"]["yPosIcon"] = MainMinimizedIcon:GetTop();
