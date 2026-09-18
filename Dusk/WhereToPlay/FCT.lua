@@ -146,6 +146,35 @@ function ReturnValueLevel(i)
 	return lvlNeeded;
 end
 ------------------------------------------------------------------------------------------
+-- check whether a player level belongs to a zone range
+-- Supports both continuous ranges ("20 - 35") and comma-separated values ("1 - 25, 30").
+------------------------------------------------------------------------------------------
+function IsLevelInZoneRange(level, rangeText)
+	level = tonumber(level);
+	if(level == nil or rangeText == nil)then
+		return false;
+	end
+
+	for part in string.gmatch(tostring(rangeText), "[^,]+") do
+		part = string.gsub(part, "^%s*(.-)%s*$", "%1");
+		local first, last = string.match(part, "^(%d+)%s*%-%s*(%d+)$");
+		if(first ~= nil and last ~= nil)then
+			first = tonumber(first);
+			last = tonumber(last);
+			if(level >= first and level <= last)then
+				return true;
+			end
+		else
+			local single = tonumber(string.gsub(part, "%s+", ""));
+			if(single ~= nil and level == single)then
+				return true;
+			end
+		end
+	end
+
+	return false;
+end
+------------------------------------------------------------------------------------------
 -- display the race of the players
 ------------------------------------------------------------------------------------------
 function DisplayRace(windowWidth)
@@ -262,47 +291,32 @@ function tablelength(T)
   return count
 end
 ------------------------------------------------------------------------------------------
+-- keep saved controls inside the current display
+------------------------------------------------------------------------------------------
+function ClampToScreen(x, y, width, height)
+	local screenWidth, screenHeight = Turbine.UI.Display:GetSize();
+	local maxX = math.max(0, screenWidth - (width or 0));
+	local maxY = math.max(0, screenHeight - (height or 0));
+
+	x = tonumber(x) or 0;
+	y = tonumber(y) or 0;
+
+	if(x < 0)then x = 0; end
+	if(y < 0)then y = 0; end
+	if(x > maxX)then x = maxX; end
+	if(y > maxY)then y = maxY; end
+
+	return x, y;
+end
+------------------------------------------------------------------------------------------
 -- display the selected tier
 ------------------------------------------------------------------------------------------
 -- !!!! to be modified when new zone is added !!!!
 ------------------------------------------------------------------------------------------
 function ReturnTier(i)
-	if(i == 71)then
-		return 101;
-	elseif(i == 113)then
-		return 131;
-	elseif(i >= 1 and i <= 6)then
-		return 1;
-	elseif(i >= 7 and i <= 12)then
-		return 2;
-	elseif(i >= 13 and i <= 16)then
-		return 3;
-	elseif(i >= 17 and i <= 19)then
-		return 4;
-	elseif(i >= 20 and i <= 24)then
-		return 5;
-	elseif(i >= 25 and i <= 38)then
-		return 6;
-	elseif(i >= 39 and i <= 52)then
-		return 7;
-	elseif(i >= 53 and i <= 59)then
-		return 8;
-	elseif(i >= 60 and i <= 75)then
-		return 9;
-	elseif(i >= 76 and i <= 94)then
-		return 10;
-	elseif(i >= 95 and i <= 103)then
-		return 11;
-	elseif(i >= 104 and i <= 107)then
-		return 12;
-	elseif(i >= 108 and i <= 116)then
-		return 13;
-	elseif(i >= 117 and i <= 127)then
-		return 14;
-	elseif(i >= 128 and i <= 155)then
-		return 15;
-	elseif(i >= 156 and i <= 161)then
-		return 16;
+	local zone = ZonesNamesAndLevel and ZonesNamesAndLevel["zones" .. tostring(i)];
+	if(zone ~= nil and zone.farmTier ~= nil)then
+		return tonumber(zone.farmTier) or 0;
 	end
 	return 0;
 end
