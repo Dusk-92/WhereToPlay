@@ -743,6 +743,7 @@ datasArtifactTier15 = {1092926431,
 ----
 --- datas Tier 16 (Sul Madash)
 -- Icon IDs verified directly from the LOTRO client (client_general.dat).
+-- French item names verified directly from client_local_FR.dat.
 -- Only actual harvested inventory materials are listed here; world resource nodes
 -- such as Silvered Ore Deposit / Teak Branches do not expose an IconPrimaryID.
 datasArtifactTier16 = {1093043175,
@@ -762,10 +763,10 @@ datasRareLocationTier16 = {"M\195\187r Ghala et les Monts de l'Hatokali"};
 datasArtifactNamesTier16 = {"Artefact m\195\187rai endommag\195\169",
                             "Morceau d'argile rouge"};
 datasOreNamesTier16 = {"Bloc de minerai de fer m\195\187rai",
-                       "Bloc de minerai m\195\187rai miroitant (rare)",
+                       "Bloc de minerai r\195\169fl\195\169chissant m\195\187rai",
                        "Grenat",
                        "B\195\169ryl dor\195\169"};
-datasWoodNamesTier16 = {"Rondin m\195\187rai"};
+datasWoodNamesTier16 = {"B\195\187ches m\195\187rai"};
 datasHideNamesTier16 = {"Peau m\195\187rai"};
 datasRareNamesTier16 = {"B\195\169ryl dor\195\169"};
 ----
