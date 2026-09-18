@@ -73,7 +73,7 @@ function GenerateOptionsWindow()
 
 
 
-	--[[
+	--[[ Legacy instance option intentionally disabled: datasInstances is not part of the package.
 		OptionsWindow.Message=Turbine.UI.Label(); 
 			OptionsWindow.Message:SetParent(OptionsWindow); 
 			OptionsWindow.Message:SetSize(300, 40); 
@@ -88,7 +88,7 @@ function GenerateOptionsWindow()
 			checkBoxInstance:SetParent( OptionsWindow );
 			checkBoxInstance:SetSize(250, 40); 
 			checkBoxInstance:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-			checkBoxInstance:SetText(Strings.PluginOption2);
+			checkBoxInstance:SetText(Strings.PluginOption3);
 			checkBoxInstance:SetPosition(posx + 100, posy);
 			checkBoxInstance:SetVisible(true);
 			if(settings["displayInstances"]["value"] == true)then
