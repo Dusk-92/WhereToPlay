@@ -300,8 +300,10 @@ function ReturnTier(i)
 		val = 13;
 	elseif(i == 117 or i == 118 or i == 119 or i == 120 or i == 121 or i == 122 or i == 123 or i == 124 or i == 125 or i == 126 or i == 127 )then
 		val = 14;
-	elseif(i == 128 or i == 129 or i == 130 or i == 131)then
+	elseif(i >= 128 and i <= 135)then
 		val = 15;
+	elseif(i >= 136 and i <= 140)then
+		val = 16;
 	end
 
 	return val;
@@ -365,6 +367,8 @@ function DisplaySmallLabel(i, tier, posx, posy, whereToDisplay)
 		texte = Strings.PluginProfTier14;
 	elseif(tier == 15)then
 		texte = Strings.PluginProfTier15;
+	elseif(tier == 16)then
+		texte = Strings.PluginProfTier16;
 	end
 	centerLabelBVoc[i]:SetText( "T" .. tier .. " - " .. texte );
 	centerLabelBVoc[i]:SetTextAlignment( Turbine.UI.ContentAlignment.MiddleCenter );
