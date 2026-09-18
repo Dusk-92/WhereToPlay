@@ -226,7 +226,7 @@ function CreateLocalizationInfo()
 		zones136 = {mapHex =  0x412460aa, texte = "Belfalas", lvl = "142", souCat = true},
 		zones137 = {mapHex =  0x412460a7, texte = "Dor En Ernil", lvl = "142 - 143", souCat = true},
 		zones138 = {mapHex =  0x41239767, texte = "Dol Amroth", lvl = "142 - 143", souCat = true},
-		zones139 = {mapHex =  0x4124848f, texte = "Outer Gondor", lvl = "142 - 144", souCat = false},
+		zones139 = {mapHex =  0x4124848f, texte = "Outer Gondor", lvl = "143 - 145", souCat = false},
 		zones140 = {mapHex =  0x41248492, texte = "Anfalas", lvl = "142 - 144", souCat = true},
 		zones141 = {mapHex =  0x41248491, texte = "Pinnath Gelin", lvl = "142 - 144", souCat = true},
 		zones142 = {mapHex =  0x41248399, texte = "The Shield Isles", lvl = "145 - 147", souCat = false},
