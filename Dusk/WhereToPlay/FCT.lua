@@ -19,12 +19,47 @@ function RebuildMainWindow()
 	WhereToPlay:SetVisible(shouldBeVisible);
 end
 
+function RefreshLevelDisplay()
+	if(WhereToPlay == nil)then return; end
+
+	local currentLvl = tonumber(settings["playerLvl"]["value"]) or 0;
+	if(WhereToPlay.LevelValueLabel ~= nil)then
+		WhereToPlay.LevelValueLabel:SetText(currentLvl);
+	end
+
+	local zoneNames = WhereToPlay.ZoneNameLabels;
+	local zoneLevels = WhereToPlay.ZoneLevelLabels;
+	if(type(zoneNames) ~= "table" and type(zoneLevels) ~= "table")then return; end
+
+	for i = 1, NbrEntries do
+		local valLvl = ReturnValueLevel(i);
+		local minLvl = tonumber(valLvl[1]);
+		local maxLvl = tonumber(valLvl[2]);
+		local inRange = minLvl ~= nil and maxLvl ~= nil and currentLvl >= minLvl and currentLvl <= maxLvl;
+
+		if(type(zoneNames) == "table" and zoneNames[i] ~= nil)then
+			if(inRange)then
+				zoneNames[i]:SetBackColor(Turbine.UI.Color(.9, .5, .7, .5));
+				zoneNames[i]:SetForeColor(Turbine.UI.Color.Black);
+			else
+				zoneNames[i]:SetBackColor(Turbine.UI.Color.Black);
+				zoneNames[i]:SetForeColor(Turbine.UI.Color.White);
+			end
+		end
+
+		if(type(zoneLevels) == "table" and zoneLevels[i] ~= nil)then
+			zoneLevels[i]:SetForeColor(inRange and Turbine.UI.Color.Lime or Turbine.UI.Color.Gold);
+		end
+	end
+end
+
 function UpdateLvl()
+	if(Player == nil)then return; end
 	local currentLvl = Player:GetLevel();
 
 	if(settings["playerLvl"]["value"] ~= currentLvl)then
 		settings["playerLvl"]["value"] = currentLvl;
-		RebuildMainWindow();
+		RefreshLevelDisplay();
 	end
 end
 ------------------------------------------------------------------------------------------
