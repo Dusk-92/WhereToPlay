@@ -638,7 +638,7 @@
 							"Branche r\195\169sistante de bois mort du Mordor"};
 	datasHideNamesTier13 = {"Peau de Minas Ithil"};
 
-	datasRareNamesTier13 = {"Fragment d'Ithilharn"};
+	datasRareNamesTier13_1 = {"Fragment d'Ithilharn"};
 ----
 ---- Tier 13_1
 	datasArtifactTier13_1 = {0x411DB3A4,
