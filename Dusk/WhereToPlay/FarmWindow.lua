@@ -74,6 +74,8 @@ function CreateFarmWindow(i)
 		WhereToPlayerDatas:SetText("Tier " .. title .. " - " .. Strings.PluginProfTier14);
 	elseif(title == 15)then
 		WhereToPlayerDatas:SetText("Tier " .. title .. " - " .. Strings.PluginProfTier15);
+	elseif(title == 16)then
+		WhereToPlayerDatas:SetText("Tier " .. title .. " - " .. Strings.PluginProfTier16);
 	end
 	 
     WhereToPlayerDatas:SetForeColor(Turbine.UI.Color.Gold);
@@ -520,6 +522,23 @@ function DisplayIcones(val, tier,  posx, posy, textColor)
 			datas = datasRareTier15;
 			datasLocation = datasRareLocationTier15;
 		end
+	elseif(tier == 16)then
+		if(val == 1)then
+			datas = datasArtifactTier16;
+			datasLocation = datasArtifactLocationTier16;
+		elseif(val == 2)then
+			datas = datasOreTier16;
+			datasLocation = datasOreLocationTier16;
+		elseif(val == 3)then
+			datas = datasWoodTier16;
+			datasLocation = datasWoodLocationTier16;
+		elseif(val == 4)then
+			datas = datasHideTier16;
+			datasLocation = datasHideLocationTier16;
+		elseif(val == 5)then
+			datas = datasRareTier16;
+			datasLocation = datasRareLocationTier16;
+		end
 	end
 
 	nbrIcons = tablelength(datas);
@@ -788,6 +807,18 @@ function DisplayIcones(val, tier,  posx, posy, textColor)
 					WhereToPlayerDatasNameObjects:SetText(datasHideNamesTier15[i]);
 				elseif(val == 5)then
 					WhereToPlayerDatasNameObjects:SetText(datasRareNamesTier15[i]);
+				end
+			elseif(tier == 16)then
+				if(val == 1)then
+					WhereToPlayerDatasNameObjects:SetText(datasArtifactNamesTier16[i]);
+				elseif(val == 2)then
+					WhereToPlayerDatasNameObjects:SetText(datasOreNamesTier16[i]);
+				elseif(val == 3)then
+					WhereToPlayerDatasNameObjects:SetText(datasWoodNamesTier16[i]);
+				elseif(val == 4)then
+					WhereToPlayerDatasNameObjects:SetText(datasHideNamesTier16[i]);
+				elseif(val == 5)then
+					WhereToPlayerDatasNameObjects:SetText(datasRareNamesTier16[i]);
 				end
 			end
 
