@@ -20,13 +20,3 @@ settings["playerLvl"]["value"] = PlayerLvl;
 valCheck = 200;
 NbrEntries = 161;
 
-------------------------------------------------------------------------------------------
--- load all the dats needed
-------------------------------------------------------------------------------------------
-LoadSettings();
-
-
-local Today = Turbine.Engine.GetDate();
-local TodayDay = Today.Day;
-local TodayMonth = Today.Month;
-local TodayYear = Today.Year;
