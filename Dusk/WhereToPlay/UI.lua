@@ -25,7 +25,8 @@ function CreateMainWindow()
 	WhereToPlay:SetZOrder(1);
 	WhereToPlay:SetMouseVisible(true);
 	WhereToPlay:SetWantsKeyEvents(true);
-	WhereToPlay:SetWantsUpdates(true);
+	-- Level changes are event-driven; keep the window out of the per-frame Update loop.
+	WhereToPlay:SetWantsUpdates(false);
 
 	WhereToPlay:SetPosition(settings["windowPosition"]["xPos"], settings["windowPosition"]["yPos"]);
 	
@@ -67,6 +68,7 @@ function CreateMainWindow()
 	WhereToPlayerDatas:SetFont(Turbine.UI.Lotro.Font.BookAntiquaBold24);
 	WhereToPlayerDatas:SetForeColor(Turbine.UI.Color.Gold);
 	WhereToPlayerDatas:SetText(settings["playerLvl"]["value"]); 
+	WhereToPlay.LevelValueLabel = WhereToPlayerDatas;
 
 	------------------------------------------------------------------------------------------
 	-- box bleu fond
@@ -98,6 +100,9 @@ function CreateMainWindow()
 	local WhereToPlayFarmPlace = {};
 	local WhereToPlayFarmPlaceTier = {};
 	local WhereToPlayInstancePlace = {};
+	local WhereToPlayZoneLevel = {};
+	WhereToPlay.ZoneNameLabels = WhereToPlayZoneName;
+	WhereToPlay.ZoneLevelLabels = WhereToPlayZoneLevel;
 	local posx = 10;
 	local posy = 5;
 
@@ -202,19 +207,19 @@ function CreateMainWindow()
 			end
 		end
 
-		local WhereToPlayZoneLvl=Turbine.UI.Label(); 
-		WhereToPlayZoneLvl:SetParent(listItem); 
-		WhereToPlayZoneLvl:SetSize(100,20); 
-		WhereToPlayZoneLvl:SetPosition(posx + 380, posy); 
-		WhereToPlayZoneLvl:SetTextAlignment(Turbine.UI.ContentAlignment.Middleleft); 
-		WhereToPlayZoneLvl:SetFont(Turbine.UI.Lotro.Font.BookAntiquaBold19);
-		WhereToPlayZoneLvl:SetForeColor(Turbine.UI.Color.Gold);
-		WhereToPlayZoneLvl:SetText("lvl    " .. ZonesNamesAndLevel["zones" .. i].lvl); 
+		WhereToPlayZoneLevel[i]=Turbine.UI.Label(); 
+		WhereToPlayZoneLevel[i]:SetParent(listItem); 
+		WhereToPlayZoneLevel[i]:SetSize(100,20); 
+		WhereToPlayZoneLevel[i]:SetPosition(posx + 380, posy); 
+		WhereToPlayZoneLevel[i]:SetTextAlignment(Turbine.UI.ContentAlignment.Middleleft); 
+		WhereToPlayZoneLevel[i]:SetFont(Turbine.UI.Lotro.Font.BookAntiquaBold19);
+		WhereToPlayZoneLevel[i]:SetForeColor(Turbine.UI.Color.Gold);
+		WhereToPlayZoneLevel[i]:SetText("lvl    " .. ZonesNamesAndLevel["zones" .. i].lvl); 
 
 		if(settings["playerLvl"]["value"] >= tonumber(valLvl[1]) and settings["playerLvl"]["value"] <= tonumber(valLvl[2]))then
-			WhereToPlayZoneLvl:SetForeColor(Turbine.UI.Color.Lime);
+			WhereToPlayZoneLevel[i]:SetForeColor(Turbine.UI.Color.Lime);
 		else
-			WhereToPlayZoneLvl:SetForeColor(Turbine.UI.Color.Gold);
+			WhereToPlayZoneLevel[i]:SetForeColor(Turbine.UI.Color.Gold);
 		end
 
 		listbox:AddItem( listItem );
@@ -243,24 +248,9 @@ function CreateMainWindow()
 	EscapeKeyHandler();
 	PositionChangedWindow();
 	ClosingTheWindow();
-	UpdateChecker();
 
 	------------------------------------------------------------------------------------------
 	-- Display the info window on mouse over my name
 	------------------------------------------------------------------------------------------
 	DisplayInfosWindow(WhereToPlay:GetWidth()/2 - 75, WhereToPlay:GetHeight() - 18);
-end
-
-------------------------------------------------------------------------------------------
--- Update checker
-------------------------------------------------------------------------------------------
-function UpdateChecker()
-	WhereToPlay.Update = function()
-		if(valCheck <= 0)then
-			valCheck = 100;
-			UpdateLvl();
-		else
-			valCheck = valCheck - 1;
-		end
-	end
 end
