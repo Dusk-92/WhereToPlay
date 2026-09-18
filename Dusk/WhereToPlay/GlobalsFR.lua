@@ -21,7 +21,7 @@ function CreateLocalizationInfo()
 	Strings.PluginEscIconOff = "Masque l'icone";
 	Strings.PluginWindowShow = "Affiche la fen\195\168tre.";
 	Strings.PluginWindowHide = "Cache la fen\195\168tre.";
-	Strings.PluginDateUpdate = "07.05.2026";
+	Strings.PluginDateUpdate = "18.09.2026";
 	------------------------------------------------------------------------------------------
 	-- help --
 	------------------------------------------------------------------------------------------
@@ -70,6 +70,7 @@ function CreateLocalizationInfo()
 	Strings.PluginProfTier13 = "Minas Ithil";
 	Strings.PluginProfTier14 = "Gundabad";
 	Strings.PluginProfTier15 = "Umbar";
+	Strings.PluginProfTier16 = "Sul Madash";
 	------------------------------------------------------------------------------------------
 	-- Instances names --
 	------------------------------------------------------------------------------------------
@@ -219,6 +220,15 @@ function CreateLocalizationInfo()
 		zones128 = {mapHex =  0x41231343, texte = "Gondor Royal", lvl = "140 - 143", souCat = true},
 		zones129 = {mapHex =  0x4124848f, texte = "Gondor Ext\195\169rieur", lvl = "143 - 145", souCat = true},
 		zones130 = {mapHex =  0x41248399, texte = "Les \195\174les du bouclier", lvl = "145 - 147", souCat = true},
-		zones131 = {mapHex =  0x41248eef, texte = "Cap d'Umbar", lvl = "147 - 150", souCat = true}
+		zones131 = {mapHex =  0x41248eef, texte = "Cap d'Umbar", lvl = "147 - 150", souCat = true},
+		zones132 = {mapHex = 0, texte = "Ambar\195\187l", lvl = "150", souCat = true},
+		zones133 = {mapHex = 0, texte = "Kh\195\187d Zagin", lvl = "150", souCat = true},
+		zones134 = {mapHex = 0, texte = "Imh\195\187lar", lvl = "150", souCat = true},
+		zones135 = {mapHex = 0, texte = "Urash D\195\162r", lvl = "150", souCat = true},
+		zones136 = {mapHex = 0, texte = "Adagim", lvl = "151 - 152", souCat = true},
+		zones137 = {mapHex = 0, texte = "Kigh\195\162n", lvl = "153 - 155", souCat = true},
+		zones138 = {mapHex = 0, texte = "An Sh\195\170ru", lvl = "156 - 158", souCat = true},
+		zones139 = {mapHex = 0, texte = "Idag\195\162l", lvl = "159 - 160", souCat = true},
+		zones140 = {mapHex = 0, texte = "Les Monts de l'Hatokali", lvl = "160", souCat = true}
         };
 end
