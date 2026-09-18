@@ -18,5 +18,3 @@ PlayerClass = Player:GetClass();
 settings["playerLvl"]["value"] = PlayerLvl;
 
 valCheck = 200;
-NbrEntries = 161;
-
