@@ -27,7 +27,10 @@ function CreateMainWindow()
 	WhereToPlay:SetWantsKeyEvents(true);
 	WhereToPlay:SetWantsUpdates(true);
 
-	local windowX, windowY = ClampToScreen(settings["windowPosition"]["xPos"], settings["windowPosition"]["yPos"], windowWidth, heightWind);\n\tWhereToPlay:SetPosition(windowX, windowY);\n\tsettings["windowPosition"]["xPos"] = windowX;\n\tsettings["windowPosition"]["yPos"] = windowY;
+	local windowX, windowY = ClampToScreen(settings["windowPosition"]["xPos"], settings["windowPosition"]["yPos"], windowWidth, heightWind);
+	WhereToPlay:SetPosition(windowX, windowY);
+	settings["windowPosition"]["xPos"] = windowX;
+	settings["windowPosition"]["yPos"] = windowY;
 	
 	local listbox = Turbine.UI.ListBox();
     listbox:SetParent( WhereToPlay );
