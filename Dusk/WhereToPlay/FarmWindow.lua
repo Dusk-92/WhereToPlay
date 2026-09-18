@@ -24,6 +24,7 @@ function CreateFarmWindow(i)
     --FarmWindow:SetBackColor(Turbine.UI.Color(1, 0, 0, 0));
     FarmWindow:SetText(ZonesNamesAndLevel["zones" .. i].texte .. "    lvl : " .. ZonesNamesAndLevel["zones" .. i].lvl);
     FarmWindow:SetVisible(false);
+    settings["isFarmWindowVisible"]["value"] = true;
     FarmWindow:SetWantsKeyEvents(true);
 
     local posx = 20;
