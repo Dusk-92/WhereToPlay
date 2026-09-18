@@ -17,7 +17,7 @@ function CreateFarmWindow(i)
 
     FarmWindow=Turbine.UI.Lotro.GoldWindow(); 
     FarmWindow:SetSize(windowWidth, windowHeight); 
-    FarmWindow:SetPosition(windowWidth / 2 - width / 2, (windowHeight / 2 - height / 2) - 20);
+    FarmWindow:SetPosition(math.max(0, windowWidth / 2 - width / 2), math.max(0, (windowHeight / 2 - height / 2) - 20));
     FarmWindow:SetSize(width, height);
     FarmWindow:SetBlendMode(Turbine.UI.BlendMode.Undefined);
     --FarmWindow:SetBackColor(Turbine.UI.Color(1, 0, 0, 0));
@@ -542,49 +542,6 @@ function DisplayIcones(val, tier,  posx, posy, textColor)
 	end
 
 	nbrIcons = tablelength(datas);
-
-	-- Tier 16 names are verified, but the corresponding Turbine image resource IDs
-	-- are not publicly available yet. Show a textual fallback instead of an empty row.
-	if(tier == 16 and nbrIcons == 0)then
-		local names = {};
-		if(val == 1)then
-			names = datasArtifactNamesTier16;
-		elseif(val == 2)then
-			names = datasOreNamesTier16;
-		elseif(val == 3)then
-			names = datasWoodNamesTier16;
-		elseif(val == 4)then
-			names = datasHideNamesTier16;
-		elseif(val == 5)then
-			names = datasRareNamesTier16;
-		end
-
-		if(names ~= nil and tablelength(names) > 0)then
-			local textFallback = Turbine.UI.Label();
-			textFallback:SetParent(FarmWindow);
-			textFallback:SetSize(355, 32);
-			textFallback:SetPosition(posx, posy);
-			textFallback:SetFont(Turbine.UI.Lotro.Font.BookAntiqua14);
-			textFallback:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
-			textFallback:SetForeColor(textColor);
-			textFallback:SetText(table.concat(names, " / "));
-			textFallback:SetMouseVisible(true);
-
-			textFallback.MouseEnter = function()
-				WhereToPlayerDatasNameObjects:SetForeColor(textColor);
-				WhereToPlayerDatasNameObjects:SetText(table.concat(names, "\n"));
-				if(datasLocation ~= nil and datasLocation[1] ~= nil)then
-					WhereToPlayerDatasNameLocation:SetText(datasLocation[1]);
-				end
-			end
-
-			textFallback.MouseLeave = function()
-				WhereToPlayerDatasNameObjects:SetText("");
-				WhereToPlayerDatasNameLocation:SetText("");
-			end
-		end
-		return;
-	end
 
 	local WhereToPlayerDatas = {};
 	local WhereToPlayerDatasIcon = {};
