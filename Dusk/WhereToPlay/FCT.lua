@@ -9,14 +9,22 @@
 ------------------------------------------------------------------------------------------
 -- function to update the lvl of the player --
 ------------------------------------------------------------------------------------------
-function UpdateLvl()
-	local curentLvl = Player:GetLevel();
-
-	if(settings["playerLvl"]["value"] ~= curentLvl)then
-		settings["playerLvl"]["value"] = curentLvl;
+function RebuildMainWindow()
+	local shouldBeVisible = settings["isWindowVisible"]["isWindowVisible"];
+	if(WhereToPlay ~= nil)then
 		WhereToPlay:SetVisible(false);
-		CreateMainWindow();
-		WhereToPlay:SetVisible(settings["isWindowVisible"]["isWindowVisible"]);
+		WhereToPlay:SetWantsUpdates(false);
+	end
+	CreateMainWindow();
+	WhereToPlay:SetVisible(shouldBeVisible);
+end
+
+function UpdateLvl()
+	local currentLvl = Player:GetLevel();
+
+	if(settings["playerLvl"]["value"] ~= currentLvl)then
+		settings["playerLvl"]["value"] = currentLvl;
+		RebuildMainWindow();
 	end
 end
 ------------------------------------------------------------------------------------------
@@ -36,7 +44,7 @@ end
 -- split strings function
 ------------------------------------------------------------------------------------------
 function Split(s, delimiter)
-    result = {};
+    local result = {};
     for match in (s..delimiter):gmatch("(.-)"..delimiter) do
         table.insert(result, match);
     end
@@ -46,6 +54,7 @@ end
 -- event handling
 ------------------------------------------------------------------------------------------
 function EscapeKeyHandler()
+	local hudHidden = false;
 	WhereToPlay.KeyDown=function(sender, args)
 		if ( args.Action == Turbine.UI.Lotro.Action.Escape ) then
 			if(settings["escEnable"]["escEnable"] == true) then
@@ -56,13 +65,13 @@ function EscapeKeyHandler()
 	
 		-- https://www.lotro.com/forums/showthread.php?493466-How-to-hide-a-window-on-F12&p=6581962#post6581962
 		if ( args.Action == 268435635 ) then
-			hudVisible=not hudVisible;
-			if hudVisible then
+			hudHidden = not hudHidden;
+			if hudHidden then
 				WhereToPlay:SetVisible(false);
 				MainMinimizedIcon:SetVisible(false);
 			else
 				WhereToPlay:SetVisible(settings["isWindowVisible"]["isWindowVisible"]);
-				MainMinimizedIcon:SetVisible(true);
+				MainMinimizedIcon:SetVisible(settings["isMinimizeEnabled"]["isMinimizeEnabled"]);
 			end
 		end
 	end
@@ -140,7 +149,7 @@ end
 -- display the race of the players
 ------------------------------------------------------------------------------------------
 function DisplayRace(windowWidth)
-	centerLabelB5 = Turbine.UI.Label();
+	local centerLabelB5 = Turbine.UI.Label();
 	centerLabelB5:SetParent(WhereToPlay);
 	centerLabelB5:SetPosition( windowWidth/2, 35 );
 	centerLabelB5:SetSize( 32, 32  );
@@ -175,7 +184,7 @@ end
 -- display the class of the players
 ------------------------------------------------------------------------------------------
 function DisplayClass(windowWidth)
-	centerLabelB6 = Turbine.UI.Control();
+	local centerLabelB6 = Turbine.UI.Control();
 	centerLabelB6:SetParent(WhereToPlay);
 	centerLabelB6:SetPosition( windowWidth/2 + 35, 35 );
 	centerLabelB6:SetSize( 32, 32  );
@@ -222,6 +231,7 @@ end
 -- display the separatoer and the title of the materials
 ------------------------------------------------------------------------------------------
 function TitleDisplayer(windowToDisplay, posx, posy, textToDisplay, textColor, LineColor)
+	local sizex = 360;
 	windowToDisplay.Message=Turbine.UI.Label(); 
 	windowToDisplay.Message:SetParent(windowToDisplay); 
 	windowToDisplay.Message:SetSize(380, 30); 
@@ -235,8 +245,6 @@ function TitleDisplayer(windowToDisplay, posx, posy, textToDisplay, textColor, L
 	windowToDisplay.Message:SetParent(windowToDisplay); 
 	if(windowToDisplay == InstanceWindow)then
 		sizex = 460;
-	else
-		sizex = 360;
 	end
 	windowToDisplay.Message:SetSize(sizex, 30); 
 	windowToDisplay.Message:SetPosition(windowToDisplay:GetWidth()/2 - (sizex / 2), posy - 5); 
@@ -259,54 +267,44 @@ end
 -- !!!! to be modified when new zone is added !!!!
 ------------------------------------------------------------------------------------------
 function ReturnTier(i)
-	local val = 0;
-
-	if(i == 1 or i == 2 or i == 3 or i == 4 or i == 5 or i == 6)then
-		val = 1;
-	elseif(i == 7 or i == 8 or i == 9 or i == 10 or i == 11 or i == 12)then
-		val = 2;
-	elseif(i == 13 or i == 14 or i == 15 or i == 16)then
-		val = 3;
-	elseif(i == 17 or i == 18 or i == 19)then
-		val = 4;
-	elseif(i == 20 or i == 21 or i == 22 or i == 23 or i == 24)then
-		val = 5;
-	elseif(i == 25 or i == 26 or i == 27 or i == 28 or i == 29 or i == 30 
-	or i == 31 or i == 32 or i == 33 or i == 34 or i == 35 or i == 36 or i == 37 or i == 38)then
-		val = 6;
-	elseif(i == 39 or i == 40 or i == 41 or i == 42 or i == 43 or i == 44 
-	or i == 45 or i == 46 or i == 47 or i == 48 or i == 49 or i == 50 or i == 51 or i == 52)then
-		val = 7;
-	elseif(i == 53 or i == 54 or i == 55 or i == 56 or i == 57 or i == 58 or i == 59)then
-		val = 8;
-	elseif(i == 60 or i == 61 or i == 62 or i == 63 or i == 64
-	 or i == 65 or i == 66 or i == 67 or i == 69 or i == 70 or i == 72 or i == 73 or i == 74 or i == 75)then -- enlever or i == 71
-		val = 9;
-	elseif(i == 76 or i == 77 or i == 78 or i == 79 or i == 80
-	 or i == 81 or i == 82 or i == 83 or i == 84 or i == 85 or i == 86 or i == 87 or i == 88
-	  or i == 89 or i == 90 or i == 91 or i == 92 or i == 93 or i == 94)then
-		val = 10;
-	elseif(i == 71)then
-		val = 101;
-	elseif(i == 95 or i == 96 or i == 97 or i == 98 or i == 99 or i == 100 or i == 101 or i == 102 or i == 103)then
-		val = 11;
-	elseif(i == 104 or i == 105 or i == 106 or i == 107)then
-		val = 12;
-	elseif(i == 108 or i == 109 or i == 110 or i == 111 or i == 112)then
-		val = 13;
+	if(i == 71)then
+		return 101;
 	elseif(i == 113)then
-		val = 131;
-	elseif(i == 114 or i == 115 or i == 116)then -- enlever or i == 113
-		val = 13;
-	elseif(i == 117 or i == 118 or i == 119 or i == 120 or i == 121 or i == 122 or i == 123 or i == 124 or i == 125 or i == 126 or i == 127 )then
-		val = 14;
+		return 131;
+	elseif(i >= 1 and i <= 6)then
+		return 1;
+	elseif(i >= 7 and i <= 12)then
+		return 2;
+	elseif(i >= 13 and i <= 16)then
+		return 3;
+	elseif(i >= 17 and i <= 19)then
+		return 4;
+	elseif(i >= 20 and i <= 24)then
+		return 5;
+	elseif(i >= 25 and i <= 38)then
+		return 6;
+	elseif(i >= 39 and i <= 52)then
+		return 7;
+	elseif(i >= 53 and i <= 59)then
+		return 8;
+	elseif(i >= 60 and i <= 75)then
+		return 9;
+	elseif(i >= 76 and i <= 94)then
+		return 10;
+	elseif(i >= 95 and i <= 103)then
+		return 11;
+	elseif(i >= 104 and i <= 107)then
+		return 12;
+	elseif(i >= 108 and i <= 116)then
+		return 13;
+	elseif(i >= 117 and i <= 127)then
+		return 14;
 	elseif(i >= 128 and i <= 155)then
-		val = 15;
+		return 15;
 	elseif(i >= 156 and i <= 161)then
-		val = 16;
+		return 16;
 	end
-
-	return val;
+	return 0;
 end
 ------------------------------------------------------------------------------------------
 -- display the small label hover the little bac button of the tier
@@ -317,7 +315,7 @@ function DisplaySmallLabel(i, tier, posx, posy, whereToDisplay)
 	local centerLabelBVoc = {};
 	local texte = "";
 
-	buttonDefineHouseLocationPersonalFaux = Turbine.UI.Control();
+	local buttonDefineHouseLocationPersonalFaux = Turbine.UI.Control();
 	buttonDefineHouseLocationPersonalFaux:SetParent( whereToDisplay );
 	buttonDefineHouseLocationPersonalFaux:SetPosition(posx, posy);
 	buttonDefineHouseLocationPersonalFaux:SetSize( 20, 20 );
@@ -403,7 +401,7 @@ end
 ------------------------------------------------------------------------------------------
 function DisplaySmallLabelForInstanse(i, posx, posy, whereToDisplay)
 
-	buttonDefineHouseLocationPersonalFaux = Turbine.UI.Control();
+	local buttonDefineHouseLocationPersonalFaux = Turbine.UI.Control();
 	buttonDefineHouseLocationPersonalFaux:SetParent( whereToDisplay );
 	buttonDefineHouseLocationPersonalFaux:SetPosition(posx, posy);
 	buttonDefineHouseLocationPersonalFaux:SetSize( 20, 20 );
@@ -427,7 +425,7 @@ end
 --function to display the infos window --
 ------------------------------------------------------------------------------------------
 function DisplayInfosWindow(posx, posy)
-	ButtonInfos = Turbine.UI.Extensions.SimpleWindow();
+	local ButtonInfos = Turbine.UI.Extensions.SimpleWindow();
 	ButtonInfos:SetParent( WhereToPlay );
 	ButtonInfos:SetPosition(posx, posy);
 	ButtonInfos:SetSize( 150, 20 );
