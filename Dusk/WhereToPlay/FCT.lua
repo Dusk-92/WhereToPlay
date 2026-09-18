@@ -169,7 +169,8 @@ function IsLevelInZoneRange(level, rangeText)
 				return true;
 			end
 		else
-			local single = tonumber(string.gsub(part, "%s+", ""));
+			local cleanPart = string.gsub(part, "%s+", "");
+			local single = tonumber(cleanPart);
 			if(single ~= nil and level == single)then
 				return true;
 			end
