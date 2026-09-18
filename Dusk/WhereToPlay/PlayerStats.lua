@@ -18,7 +18,7 @@ PlayerClass = Player:GetClass();
 settings["playerLvl"]["value"] = PlayerLvl;
 
 valCheck = 200;
-NbrEntries = 131;
+NbrEntries = 140;
 
 ------------------------------------------------------------------------------------------
 -- load all the dats needed
