@@ -749,11 +749,13 @@ datasArtifactTier15 = {1092926431,
 -- Icon IDs verified directly from the LOTRO client (client_general.dat).
 -- Only actual harvested inventory materials are listed here; world resource nodes
 -- such as Silvered Ore Deposit / Teak Branches do not expose an IconPrimaryID.
-datasArtifactTier16 = {1093043175};
+datasArtifactTier16 = {1093043175,
+                       1093043198};
 datasArtifactLocationTier16 = {"M\195\187r Ghala (Adag\195\173m, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) und Hatok\195\161li-H\195\188gel"};
 datasOreTier16 = {1093043182,
                   1093043177,
-                  1093043168};
+                  1093043168,
+                  1093043196};
 datasOreLocationTier16 = {"M\195\187r Ghala (Adag\195\173m, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) und Hatok\195\161li-H\195\188gel"};
 datasWoodTier16 = {1093043191};
 datasWoodLocationTier16 = {"M\195\187r Ghala (Adag\195\173m, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) und Hatok\195\161li-H\195\188gel"};
@@ -762,10 +764,12 @@ datasHideLocationTier16 = {"M\195\187r Ghala (Adag\195\173m, Kigh\195\162n, An S
 datasRareTier16 = {1093043196};
 datasRareLocationTier16 = {"M\195\187r Ghala und Hatok\195\161li-H\195\188gel"};
 -- English client names are kept until the official DE item strings are verified.
-datasArtifactNamesTier16 = {"Damaged M\195\187rai Artifact"};
+datasArtifactNamesTier16 = {"Damaged M\195\187rai Artifact",
+                            "Lump of Red Clay"};
 datasOreNamesTier16 = {"Chunk of M\195\187rai Iron Ore",
                        "Chunk of M\195\187rai Mirrored Ore (rare)",
-                       "Garnet"};
+                       "Garnet",
+                       "Golden Beryl"};
 datasWoodNamesTier16 = {"M\195\187rai Logs"};
 datasHideNamesTier16 = {"M\195\187rai Hide"};
 datasRareNamesTier16 = {"Golden Beryl"};
