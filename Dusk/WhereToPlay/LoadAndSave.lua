@@ -63,6 +63,11 @@ function LoadSettings()
             }
         };
 	end
+	-- Transient windows are recreated on demand and must never persist as open across reloads.
+	settings["isOptionsWindowVisible"]["isOptionsWindowVisible"] = false;
+	settings["isMapWindowVisible"]["value"] = false;
+	settings["isFarmWindowVisible"]["value"] = false;
+	settings["isInstanceWindowVisible"]["value"] = false;
 end
 ------------------------------------------------------------------------------------------
 -- create the save settings
