@@ -21,6 +21,7 @@ function CreateInstanceWindow(i)
     --InstanceWindow:SetBackColor(Turbine.UI.Color(1, 0, 0, 0));
     InstanceWindow:SetText(ZonesNamesAndLevel["zones" .. i].texte .. "    lvl : " .. ZonesNamesAndLevel["zones" .. i].lvl);
     InstanceWindow:SetVisible(false);
+    settings["isInstanceWindowVisible"]["value"] = true;
     InstanceWindow:SetWantsKeyEvents(true);
 
     local posx = 0;
