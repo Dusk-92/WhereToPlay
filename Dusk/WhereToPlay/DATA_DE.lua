@@ -628,8 +628,8 @@
 	datasHideTier13 = {0x411DB3A1};
 	datasHideLocationTier13 = {"Das Morgultal, Belagertes Mordor"};
 
-	datasRareTier13 = {0x411E9CEB};
-	datasRareLocationTier13 = {"Gefunden in Resource Spawns oder Barter"};
+	datasRareTier13_1 = {0x411E9CEB};
+	datasRareLocationTier13_1 = {"Gefunden in Resource Spawns oder Barter"};
 
 	datasArtifactNamesTier13 = {"Zerfleddertes Minas Ithil Pergament",
 							"St\195\188ck versiegelten Minas-Ithil-Wachses"};
