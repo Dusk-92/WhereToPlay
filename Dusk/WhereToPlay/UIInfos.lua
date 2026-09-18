@@ -9,7 +9,7 @@
 function CreateInfosWindow()
 	InfosWindow=Turbine.UI.Lotro.GoldWindow(); 
 	InfosWindow:SetSize(300,180); 
-	InfosWindow:SetText(Strings.PluginInfosTitle or "Information"); 
+	InfosWindow:SetText("Informations"); 
 	InfosWindow.Message=Turbine.UI.Label(); 
 	InfosWindow.Message:SetParent(InfosWindow); 
 	InfosWindow.Message:SetSize(150,10); 
