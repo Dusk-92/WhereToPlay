@@ -12,6 +12,8 @@ function LoadSettings()
 		settings = loadedSettings;
 	end
 
+	local previousSettingsVersion = tonumber(settings.settingsVersion) or 0;
+
 	if(type(settings.windowPosition) ~= "table")then settings.windowPosition = {}; end
 	if(settings.windowPosition.xPos == nil)then settings.windowPosition.xPos = 500; end
 	if(settings.windowPosition.yPos == nil)then settings.windowPosition.yPos = 500; end
@@ -21,7 +23,11 @@ function LoadSettings()
 	if(settings.IconPosition.yPosIcon == nil)then settings.IconPosition.yPosIcon = 500; end
 
 	if(type(settings.isMinimizeEnabled) ~= "table")then settings.isMinimizeEnabled = {}; end
-	if(settings.isMinimizeEnabled.isMinimizeEnabled == nil)then settings.isMinimizeEnabled.isMinimizeEnabled = false; end
+	if(settings.isMinimizeEnabled.isMinimizeEnabled == nil)then settings.isMinimizeEnabled.isMinimizeEnabled = true; end
+	-- Older versions always displayed the icon regardless of this saved value.
+	if(previousSettingsVersion < 140)then
+		settings.isMinimizeEnabled.isMinimizeEnabled = true;
+	end
 
 	if(type(settings.isWindowVisible) ~= "table")then settings.isWindowVisible = {}; end
 	if(settings.isWindowVisible.isWindowVisible == nil)then settings.isWindowVisible.isWindowVisible = true; end
@@ -52,6 +58,8 @@ function LoadSettings()
 
 	if(type(settings.playerLvl) ~= "table")then settings.playerLvl = {}; end
 	if(settings.playerLvl.value == nil)then settings.playerLvl.value = 0; end
+
+	settings.settingsVersion = 140;
 
 	-- Transient windows are recreated on demand and must never persist as open.
 	settings.isOptionsWindowVisible.isOptionsWindowVisible = false;
