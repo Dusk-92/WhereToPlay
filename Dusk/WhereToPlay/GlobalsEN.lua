@@ -22,6 +22,7 @@ function CreateLocalizationInfo()
 	Strings.PluginWindowShow = "Show the window.";
 	Strings.PluginWindowHide = "Hide the window.";
 	Strings.PluginDateUpdate = "18.09.2026";
+	Strings.PluginUnloaded = "Plugin unloaded";
 	------------------------------------------------------------------------------------------
 	-- help --
 	------------------------------------------------------------------------------------------
@@ -35,7 +36,7 @@ function CreateLocalizationInfo()
 	Strings.PluginHelp8 = "/WTP toggle - Toggle window.\n";
 	Strings.PluginHelp9 = "/WTP icon - Display or hide the icon.\n\n";
 	Strings.PluginHelp10 = "You can click on the name of a region to open the map of the region\n";
-	Strings.PluginHelp11 = "You can SHIFT + click on the main icon to display the options window\n";
+	Strings.PluginHelp11 = "You can right-click the main icon to display the options window\010";
 	Strings.PluginHelp12 = "You can click on the little bag icon to display the harvestable materials in the area.\n";
 	Strings.PluginCloseButton = "Close window";
 	------------------------------------------------------------------------------------------
@@ -208,13 +209,13 @@ function CreateLocalizationInfo()
 		zones118 = {mapHex =  0x41162479, texte = "The Sundering of Osgiliath (PvMP)", lvl = "130", souCat = false},
 		zones119 = {mapHex =  0x4121166a, texte = "Mount Gundabad", lvl = "130 - 140", souCat = false},
 		zones120 = {mapHex =  0x4121166f, texte = "Delvings of Gundabad", lvl = "130 - 131", souCat = true},
-		zones121 = {mapHex =  0x41211669, texte = "Mattugard", lvl = "132 - 133", souCat = true},
+		zones121 = {mapHex =  0x41211669, texte = "M\195\161ttugard", lvl = "130 - 132", souCat = true},
 		zones122 = {mapHex =  0x4121166d, texte = "Deepscrave", lvl = "133 - 134", souCat = true},
 		zones123 = {mapHex =  0x4121166c, texte = "Pit of Stonejaws", lvl = "134 - 135", souCat = true},
 		zones124 = {mapHex =  0x41211668, texte = "C\195\162r Bronach", lvl = "135 - 136", souCat = true},
 		zones125 = {mapHex =  0x41211670, texte = "Gloomingtarn", lvl = "137 - 138", souCat = true},
 		zones126 = {mapHex =  0x4121166b, texte = "Clovengap", lvl = "138 - 139", souCat = true},
-		zones127 = {mapHex =  0x4121166e, texte = "Tassau-terres", lvl = "139 - 140", souCat = true},
+		zones127 = {mapHex =  0x4121166e, texte = "Welkin-lofts", lvl = "139 - 140", souCat = true},
 		zones128 = {mapHex =  0x41231343, texte = "King's Gondor", lvl = "140 - 143", souCat = false},
 		zones129 = {mapHex =  0x41231342, texte = "Lossarnach", lvl = "140", souCat = true},
 		zones130 = {mapHex =  0x4123145a, texte = "Upper Lebennin", lvl = "140", souCat = true},
