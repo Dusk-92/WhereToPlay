@@ -11,7 +11,6 @@ import "Dusk.WhereToPlay.Librarys";
 -- Load the datas --
 ------------------------------------------------------------------------------------------
 CreateLocalizationInfo();
-NbrEntries = tablelength(ZonesNamesAndLevel);
 ------------------------------------------------------------------------------------------
 -- create the main window
 ------------------------------------------------------------------------------------------
@@ -22,10 +21,7 @@ CreateMainWindow();
 WhereToPlay:SetVisible(settings["isWindowVisible"]["isWindowVisible"]);
 
 MainMinimizedIcon = MinimizedIcon(Images.MinimizedIcon, 32, 32);
-local iconX, iconY = ClampToScreen(settings["IconPosition"]["xPosIcon"], settings["IconPosition"]["yPosIcon"], 32, 32);
-MainMinimizedIcon:SetPosition(iconX, iconY);
-settings["IconPosition"]["xPosIcon"] = iconX;
-settings["IconPosition"]["yPosIcon"] = iconY;
+MainMinimizedIcon:SetPosition(settings["IconPosition"]["xPosIcon"], settings["IconPosition"]["yPosIcon"]);
 MainMinimizedIcon:SetVisible(settings["isMinimizeEnabled"]["isMinimizeEnabled"]);
 MainMinimizedIcon.PositionChanged = function()
 	settings["IconPosition"]["xPosIcon"] = MainMinimizedIcon:GetLeft();
