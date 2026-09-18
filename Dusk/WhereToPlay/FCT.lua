@@ -90,15 +90,11 @@ function ClosingTheWindowOptions()
 	end
 end
 function CloseInstanceWindow()
-	if(InstanceWindow ~= nil)then
-		InstanceWindow:SetVisible(false);
-	end
+	InstanceWindow:SetVisible(false);
     settings["isInstanceWindowVisible"]["value"] = false;
 end
 function CloseFarmWindow()
-	if(FarmWindow ~= nil)then
-		FarmWindow:SetVisible(false);
-	end
+    FarmWindow:SetVisible(false);
     settings["isFarmWindowVisible"]["value"] = false;
 end
 ------------------------------------------------------------------------------------------
@@ -148,36 +144,6 @@ function ReturnValueLevel(i)
 	lvlNeeded[1] = val1;
 	lvlNeeded[2] = val2;
 	return lvlNeeded;
-end
-------------------------------------------------------------------------------------------
--- check whether a player level belongs to a zone range
--- Supports both continuous ranges ("20 - 35") and comma-separated values ("1 - 25, 30").
-------------------------------------------------------------------------------------------
-function IsLevelInZoneRange(level, rangeText)
-	level = tonumber(level);
-	if(level == nil or rangeText == nil)then
-		return false;
-	end
-
-	for part in string.gmatch(tostring(rangeText), "[^,]+") do
-		part = string.gsub(part, "^%s*(.-)%s*$", "%1");
-		local first, last = string.match(part, "^(%d+)%s*%-%s*(%d+)$");
-		if(first ~= nil and last ~= nil)then
-			first = tonumber(first);
-			last = tonumber(last);
-			if(level >= first and level <= last)then
-				return true;
-			end
-		else
-			local cleanPart = string.gsub(part, "%s+", "");
-			local single = tonumber(cleanPart);
-			if(single ~= nil and level == single)then
-				return true;
-			end
-		end
-	end
-
-	return false;
 end
 ------------------------------------------------------------------------------------------
 -- display the race of the players
@@ -296,32 +262,47 @@ function tablelength(T)
   return count
 end
 ------------------------------------------------------------------------------------------
--- keep saved controls inside the current display
-------------------------------------------------------------------------------------------
-function ClampToScreen(x, y, width, height)
-	local screenWidth, screenHeight = Turbine.UI.Display:GetSize();
-	local maxX = math.max(0, screenWidth - (width or 0));
-	local maxY = math.max(0, screenHeight - (height or 0));
-
-	x = tonumber(x) or 0;
-	y = tonumber(y) or 0;
-
-	if(x < 0)then x = 0; end
-	if(y < 0)then y = 0; end
-	if(x > maxX)then x = maxX; end
-	if(y > maxY)then y = maxY; end
-
-	return x, y;
-end
-------------------------------------------------------------------------------------------
 -- display the selected tier
 ------------------------------------------------------------------------------------------
 -- !!!! to be modified when new zone is added !!!!
 ------------------------------------------------------------------------------------------
 function ReturnTier(i)
-	local zone = ZonesNamesAndLevel and ZonesNamesAndLevel["zones" .. tostring(i)];
-	if(zone ~= nil and zone.farmTier ~= nil)then
-		return tonumber(zone.farmTier) or 0;
+	if(i == 73)then
+		return 101;
+	elseif(i == 115)then
+		return 131;
+	elseif(i >= 1 and i <= 7)then
+		return 1;
+	elseif(i >= 8 and i <= 14)then
+		return 2;
+	elseif(i >= 15 and i <= 18)then
+		return 3;
+	elseif(i >= 19 and i <= 21)then
+		return 4;
+	elseif(i >= 22 and i <= 26)then
+		return 5;
+	elseif(i >= 27 and i <= 40)then
+		return 6;
+	elseif(i >= 41 and i <= 54)then
+		return 7;
+	elseif(i >= 55 and i <= 61)then
+		return 8;
+	elseif((i >= 62 and i <= 72) or (i >= 74 and i <= 77))then
+		return 9;
+	elseif(i >= 78 and i <= 96)then
+		return 10;
+	elseif(i >= 97 and i <= 105)then
+		return 11;
+	elseif(i >= 106 and i <= 109)then
+		return 12;
+	elseif((i >= 110 and i <= 114) or (i >= 116 and i <= 118))then
+		return 13;
+	elseif(i >= 119 and i <= 127)then
+		return 14;
+	elseif(i >= 128 and i <= 155)then
+		return 15;
+	elseif(i >= 156 and i <= 161)then
+		return 16;
 	end
 	return 0;
 end
@@ -419,11 +400,6 @@ end
 --function to define the label for the instance
 ------------------------------------------------------------------------------------------
 function DisplaySmallLabelForInstanse(i, posx, posy, whereToDisplay)
-	-- Legacy instance feature has no datasInstances table in the current package.
-	if(type(datasInstances) ~= "table")then
-		return;
-	end
-
 
 	local buttonDefineHouseLocationPersonalFaux = Turbine.UI.Control();
 	buttonDefineHouseLocationPersonalFaux:SetParent( whereToDisplay );
@@ -440,9 +416,7 @@ function DisplaySmallLabelForInstanse(i, posx, posy, whereToDisplay)
 					InstanceWindow:SetVisible(false);
 				end
 				CreateInstanceWindow(i);
-				if(InstanceWindow ~= nil)then
-					InstanceWindow:SetVisible(true);
-				end
+				InstanceWindow:SetVisible(true);
 			end
 		end
 	end
