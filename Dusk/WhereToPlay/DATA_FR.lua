@@ -742,23 +742,29 @@ datasArtifactTier15 = {1092926431,
 
 ----
 --- datas Tier 16 (Sul Madash)
--- Resource icon IDs are intentionally left empty until verified from the LOTRO client.
--- This keeps the T16 farming window safe instead of using guessed IDs.
-datasArtifactTier16 = {};
+-- Icon IDs verified directly from the LOTRO client (client_general.dat).
+-- Only actual harvested inventory materials are listed here; world resource nodes
+-- such as Silvered Ore Deposit / Teak Branches do not expose an IconPrimaryID.
+datasArtifactTier16 = {1093043175};
 datasArtifactLocationTier16 = {"M\195\187r Ghala (Adagim, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) et les Monts de l'Hatokali"};
-datasOreTier16 = {};
+datasOreTier16 = {1093043182,
+                  1093043177,
+                  1093043168};
 datasOreLocationTier16 = {"M\195\187r Ghala (Adagim, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) et les Monts de l'Hatokali"};
-datasWoodTier16 = {};
+datasWoodTier16 = {1093043191};
 datasWoodLocationTier16 = {"M\195\187r Ghala (Adagim, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) et les Monts de l'Hatokali"};
-datasHideTier16 = {};
+datasHideTier16 = {1093043169};
 datasHideLocationTier16 = {"M\195\187r Ghala (Adagim, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) et les Monts de l'Hatokali"};
-datasRareTier16 = {};
+datasRareTier16 = {1093043196};
 datasRareLocationTier16 = {"M\195\187r Ghala et les Monts de l'Hatokali"};
-datasArtifactNamesTier16 = {"Damaged Murai Artifact", "Ancien registre de M\195\187r Ghala"};
-datasOreNamesTier16 = {"Silvered Ore Deposit", "Rich Silvered Ore Deposit", "Grenats polis"};
-datasWoodNamesTier16 = {"Teak Branches", "Heavy Teak Branches"};
-datasHideNamesTier16 = {"Cuir m\195\187rai bross\195\169"};
-datasRareNamesTier16 = {"Golden Bery"};
+-- English client names are kept until the official FR item strings are verified.
+datasArtifactNamesTier16 = {"Damaged M\195\187rai Artifact"};
+datasOreNamesTier16 = {"Chunk of M\195\187rai Iron Ore",
+                       "Chunk of M\195\187rai Mirrored Ore (rare)",
+                       "Garnet"};
+datasWoodNamesTier16 = {"M\195\187rai Logs"};
+datasHideNamesTier16 = {"M\195\187rai Hide"};
+datasRareNamesTier16 = {"Golden Beryl"};
 ----
 --[[
 ---- Tier empty
