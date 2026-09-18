@@ -328,7 +328,7 @@ function DisplaySmallLabel(i, tier, posx, posy, whereToDisplay)
 	ButtonPlusVoc[i]:SetSize( 180, 30 );
 	ButtonPlusVoc[i]:SetVisible(false);
 	ButtonPlusVoc[i]:SetZOrder(100);
-	ButtonPlusVoc[i]:SetBackground(ResourcePath .. "/Cadre_180_30.tga");
+	ButtonPlusVoc[i]:SetBackground(ResourcePath .. "Cadre_180_30.tga");
 
 	centerLabelBVoc[i] = Turbine.UI.Label();
 	centerLabelBVoc[i]:SetParent(ButtonPlusVoc[i]);
