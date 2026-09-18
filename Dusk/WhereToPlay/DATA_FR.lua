@@ -638,7 +638,7 @@
 							"Branche r\195\169sistante de bois mort du Mordor"};
 	datasHideNamesTier13 = {"Peau de Minas Ithil"};
 
-	datasRareNamesTier13 = {"Fragment d'Ithilharn"};
+	datasRareNamesTier13_1 = {"Fragment d'Ithilharn"};
 ----
 ---- Tier 13_1
 	datasArtifactTier13_1 = {0x411DB3A4,
@@ -667,13 +667,13 @@
 	datasOreNamesTier13_1 = {"Morceau de skarn du long fleuve",
 							"Morceau de skarn du long fleuve de qualit\195\169 sup\195\169rieur (rare) ",
 							"Ithilharn",
-							"Fragment d\'Ithilharn"};
+							"Ithilharn Shard"};
 	datasWoodNamesTier13_1 = {"B\195\187che du Long Fleuve",
 							"Morceau d'\195\169corce de bois du Long Fleuve",
 							"B\195\187che \195\169paisse du Long Fleuve"};
 	datasHideNamesTier13_1 = {"Peau de Minas Ithil"};
 
-	datasRareNamesTier13_1 = {"Fragment d'Ithilharn"};
+	datasRareNamesTier13 = {"Fragment d'Ithilharn"};
 ----
 --- datas Tier 14
 datasArtifactTier14 = {1092695114,
@@ -770,3 +770,144 @@ datasWoodNamesTier16 = {"B\195\187ches m\195\187rai"};
 datasHideNamesTier16 = {"Peau m\195\187rai"};
 datasRareNamesTier16 = {"B\195\169ryl dor\195\169"};
 ----
+--[[
+---- Tier empty
+
+	datasArtifactTier3 = {0x00000000,
+							0x00000000,
+							0x00000000};
+	datasArtifactLocationTier3 = {""};
+
+	datasOreTier3 = {0x00000000,
+							0x00000000,
+							0x00000000, 
+							0x00000000, 
+							0x00000000,
+							0x00000000,
+							0x00000000,
+							0x00000000,
+							0x00000000};
+	datasOreLocationTier3 = {""};
+
+	datasWoodTier3 = {0x00000000,
+							0x00000000,
+							0x00000000,
+							0x00000000};
+	datasWoodLocationTier3 = {""};
+
+	datasHideTier3 = {0x00000000};
+	datasHideLocationTier2 = {""};
+
+	datasRareTier14 = {0x00000000};
+	datasRareLocationTier13_1 = {""};
+
+	datasArtifactNamesTier3 = {"",
+							"",
+							""};
+	datasOreNamesTier3 = {"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""};
+	datasWoodNamesTier3 = {"",
+							"",
+							"",
+							""};
+	datasHideNamesTier3 = {""};
+	datasRareNamesTier13 = {""};
+----
+]]--
+---------------------------------------------------------------
+-- instances Datas
+---------------------------------------------------------------
+---------------------------------------------------------------
+-- Shadows of Angmar 
+---------------------------------------------------------------
+---------------------------------------------------------------
+-- level 20
+---------------------------------------------------------------
+datasInstances = {};
+
+datasInstances[1] = {"Great Barrow: The Maze", -- Name
+					"Maze", -- Abbreviation
+					"Bree-land", -- region
+					"20-130", -- Level
+					"1", -- Tier
+					"Fellowship", -- Group
+					"Free", -- Availability
+					" ", -- Prequis
+					"Daily", -- Challenge
+					"Located in Southern Barrow-downs, see also the Great Barrow"}; -- note
+
+datasInstances[2] = {"Great Barrow: Thadúr", -- Name
+					"Thadur", -- Abbreviation
+					"Bree-land", -- region
+					"20-130", -- Level
+					"1", -- Tier
+					"Fellowship", -- Group
+					"Free", -- Availability
+					" ", -- Prequis
+					"Daily", -- Challenge
+					"Located in Southern Barrow-downs, see also the Great Barrow"}; -- note
+
+datasInstances[3] = {"Great Barrow: Sambrog", -- Name
+					"Sammy", -- Abbreviation
+					"Bree-land", -- region
+					"20-130", -- Level
+					"1", -- Tier
+					"Fellowship", -- Group
+					"Free", -- Availability
+					"Maze and Thadúr", -- Prequis
+					"Daily", -- Challenge
+					"Located in Southern Barrow-downs, see also the Great Barrow"}; -- note
+
+datasInstances[4] = {"Inn of the Forsaken", -- Name
+					"IoF or IotF", -- Abbreviation
+					"The Lone-lands", -- region
+					"20-130", -- Level
+					"2", -- Tier
+					"Small Fellowship ", -- Group
+					"VIP/Buy", -- Availability
+					"Discover", -- Prequis
+					"Daily", -- Challenge
+					"Located inside the Forsaken Inn, in the basement"}; -- note
+
+datasInstances[5] = {"Inn of the Forsaken", -- Name
+					"IoF or IotF", -- Abbreviation
+					"The Lone-lands", -- region
+					"20-130", -- Level
+					"2", -- Tier
+					"Small Fellowship ", -- Group
+					"VIP/Buy", -- Availability
+					"Discover", -- Prequis
+					"Daily", -- Challenge
+					"Located inside the Forsaken Inn, in the basement"}; -- note
+
+datasInstances[6] = {"Inn of the Forsaken", -- Name
+					"IoF or IotF", -- Abbreviation
+					"The Lone-lands", -- region
+					"20-130", -- Level
+					"2", -- Tier
+					"Small Fellowship ", -- Group
+					"VIP/Buy", -- Availability
+					"Discover", -- Prequis
+					"Daily", -- Challenge
+					"Located inside the Forsaken Inn, in the basement"}; -- note
+
+--[[
+datasInstancesX = {"XXXXXXXXXXXXXXXX", -- Name
+					"XXXXXXXXXXXXXXXX", -- Abbreviation
+					"XXXXXXXXXXXXXXXX", -- region
+					"XXXXXXXXXXXXXXXX", -- Level
+					"XXXXXXXXXXXXXXXX", -- Tier
+					"XXXXXXXXXXXXXXXX", -- Group
+					"XXXXXXXXXXXXXXXX", -- Availability
+					"XXXXXXXXXXXXXXXX", -- Prequis
+					"XXXXXXXXXXXXXXXX", -- Challenge
+					"XXXXXXXXXXXXXXXX"}; -- note
+
+]]--
