@@ -22,6 +22,7 @@ function CreateLocalizationInfo()
 	Strings.PluginWindowShow = "Affiche la fen\195\168tre.";
 	Strings.PluginWindowHide = "Cache la fen\195\168tre.";
 	Strings.PluginDateUpdate = "18.09.2026";
+	Strings.PluginUnloaded = "Plugin d\195\169charg\195\169";
 	------------------------------------------------------------------------------------------
 	-- help --
 	------------------------------------------------------------------------------------------
@@ -35,7 +36,7 @@ function CreateLocalizationInfo()
 	Strings.PluginHelp8 = "/WTP toggle - Basculer la fen\195\170tre.\n";
 	Strings.PluginHelp9 = "/WTP icon - Affiche ou masque l'icone.\n\n";
 	Strings.PluginHelp10 = "Vous pouvez cliquer sur le nom d'une r\195\169gion pour ouvrir la carte de cette r\195\169gion\n";
-	Strings.PluginHelp11 = "Vous pouvez SHIFT + cliquer sur l'icon principale pour afficher la fen\195\168tre d'options\n";
+	Strings.PluginHelp11 = "Vous pouvez faire un clic droit sur l'ic\195\180ne principale pour afficher la fen\195\170tre d'options\010";
 	Strings.PluginHelp12 = "Vous pouvez cliquer sur l'icon du sac de Tier pour afficher les mat\195\169riaux r\195\169coltable dans la zone.\n";
 	Strings.PluginCloseButton = "Fermer la fen\195\170tre";
 	------------------------------------------------------------------------------------------
@@ -210,7 +211,7 @@ function CreateLocalizationInfo()
 		zones118 = {mapHex =  0x41162479, texte = "La dislocation d'Osgiliath (PvMP)", lvl = "130", souCat = false},
 		zones119 = {mapHex =  0x4121166a, texte = "Le mont Gundabad", lvl = "130 - 140", souCat = false},
 		zones120 = {mapHex =  0x4121166f, texte = "Les profondeurs de Gundabad", lvl = "130 - 131", souCat = true},
-		zones121 = {mapHex =  0x41211669, texte = "Matugarde", lvl = "131 - 132", souCat = true},
+		zones121 = {mapHex =  0x41211669, texte = "Matugarde", lvl = "130 - 132", souCat = true},
 		zones122 = {mapHex =  0x4121166d, texte = "Tordesoif", lvl = "133 - 134", souCat = true},
 		zones123 = {mapHex =  0x4121166c, texte = "Fosse de M\195\162cherocs", lvl = "134 - 135", souCat = true},
 		zones124 = {mapHex =  0x41211668, texte = "C\195\162r Bronach", lvl = "135 - 136", souCat = true},
