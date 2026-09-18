@@ -710,20 +710,20 @@ datasArtifactTier14 = {1092695114,
 --- datas Tier 15
 datasArtifactTier15 = {1092926431,
 						1092926446};
-	datasArtifactLocationTier15 = {"Gondor Royal, Umbar"};
+	datasArtifactLocationTier15 = {"Gondor Royal, Umbar, Vall\195\169e d'Ikorb\195\162n"};
 
 	datasOreTier15 = {1092926432,
 							1092926429,
 							1092926434,
 							1092926436};
-	datasOreLocationTier15 = {"Gondor Royal, Umbar"};
+	datasOreLocationTier15 = {"Gondor Royal, Umbar, Vall\195\169e d'Ikorb\195\162n"};
 
 	datasWoodTier15 = {1092926438,
 							1092926445};
-	datasWoodLocationTier15 = {"Gondor Royal, Umbar"};
+	datasWoodLocationTier15 = {"Gondor Royal, Umbar, Vall\195\169e d'Ikorb\195\162n"};
 
 	datasHideTier15 = {1092926433};
-	datasHideLocationTier15 = {"Gondor Royal, Umbar"};
+	datasHideLocationTier15 = {"Gondor Royal, Umbar, Vall\195\169e d'Ikorb\195\162n"};
 
 	datasRareTier15 = {1092926436};
 	datasRareLocationTier15 = {"Trouv\195\170 dans les ressources r\195\170coltable ou le troc"};
@@ -745,15 +745,15 @@ datasArtifactTier15 = {1092926431,
 -- Resource icon IDs are intentionally left empty until verified from the LOTRO client.
 -- This keeps the T16 farming window safe instead of using guessed IDs.
 datasArtifactTier16 = {};
-datasArtifactLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasArtifactLocationTier16 = {"M\195\187r Ghala, les Monts de l'Hatokali"};
 datasOreTier16 = {};
-datasOreLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasOreLocationTier16 = {"M\195\187r Ghala, les Monts de l'Hatokali"};
 datasWoodTier16 = {};
-datasWoodLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasWoodLocationTier16 = {"M\195\187r Ghala, les Monts de l'Hatokali"};
 datasHideTier16 = {};
-datasHideLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasHideLocationTier16 = {"M\195\187r Ghala, les Monts de l'Hatokali"};
 datasRareTier16 = {};
-datasRareLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasRareLocationTier16 = {"M\195\187r Ghala, les Monts de l'Hatokali"};
 datasArtifactNamesTier16 = {};
 datasOreNamesTier16 = {};
 datasWoodNamesTier16 = {};
