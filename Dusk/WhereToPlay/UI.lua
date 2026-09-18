@@ -115,7 +115,7 @@ function CreateMainWindow()
 		WhereToPlayZoneName[i]:SetTextAlignment(Turbine.UI.ContentAlignment.Middleleft); 
 		WhereToPlayZoneName[i]:SetFont(Turbine.UI.Lotro.Font.BookAntiquaBold19);
 
-		-- Visual hierarchy: diamond for a main region, bullet for a sub-zone.
+		-- Visual hierarchy: arrow for a main region, bullet for a sub-zone.
 		if(ZonesNamesAndLevel["zones" .. i].souCat == false)then
 			WhereToPlayZoneName[i]:SetText("> " .. ZonesNamesAndLevel["zones" .. i].texte); 
 		else
@@ -126,8 +126,8 @@ function CreateMainWindow()
 			if(i <= NbrEntries)then 
 				WhereToPlayFarmPlaceTier[i]=Turbine.UI.Label(); 
 				WhereToPlayFarmPlaceTier[i]:SetParent(listItem); 
-				WhereToPlayFarmPlaceTier[i]:SetSize(40,20); 
-				WhereToPlayFarmPlaceTier[i]:SetPosition(320, posy + 1);
+				WhereToPlayFarmPlaceTier[i]:SetSize(20,20); 
+				WhereToPlayFarmPlaceTier[i]:SetPosition(350, posy);
 				local tier = ReturnTier(i);
 				if(tier == 101)then
 					tier = 10;
@@ -135,15 +135,11 @@ function CreateMainWindow()
 					tier = 13;
 				end
 				WhereToPlayFarmPlaceTier[i]:SetFont(Turbine.UI.Lotro.Font.BookAntiquaBold18);
-				WhereToPlayFarmPlaceTier[i]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleRight); 
+				WhereToPlayFarmPlaceTier[i]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter); 
 				WhereToPlayFarmPlaceTier[i]:SetForeColor(Turbine.UI.Color.Red);
-				if(tier < 10)then
-					WhereToPlayFarmPlaceTier[i]:SetText(tier .. "  ");  
-				else
-					WhereToPlayFarmPlaceTier[i]:SetText(tier .. " ");  
-				end
+				WhereToPlayFarmPlaceTier[i]:SetText(tostring(tier));
 				WhereToPlayFarmPlaceTier[i]:SetBlendMode(Turbine.UI.BlendMode.Overlay);
-				WhereToPlayFarmPlaceTier[i]:SetZOrder(2);
+				WhereToPlayFarmPlaceTier[i]:SetZOrder(5);
 
 				WhereToPlayFarmPlace[i]=Turbine.UI.Label(); 
 				WhereToPlayFarmPlace[i]:SetParent(listItem); 
