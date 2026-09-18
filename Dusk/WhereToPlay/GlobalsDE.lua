@@ -22,7 +22,7 @@ function CreateLocalizationInfo()
 	Strings.PluginEscIconOff = "Symbol wird ausgeblendet";
 	Strings.PluginWindowShow = "Fenster wird angezeigt";
 	Strings.PluginWindowHide = "Fenster wird ausgeblendet";
-	Strings.PluginDateUpdate = "07.05.2026";
+	Strings.PluginDateUpdate = "18.09.2026";
 	------------------------------------------------------------------------------------------
 	-- help --
 	------------------------------------------------------------------------------------------
@@ -71,6 +71,7 @@ function CreateLocalizationInfo()
 	Strings.PluginProfTier13 = "Minas Ithil";
 	Strings.PluginProfTier14 = "Gundabad";
 	Strings.PluginProfTier15 = "Umbar";
+	Strings.PluginProfTier16 = "Sul Mad\195\161sh";
 	------------------------------------------------------------------------------------------
 	-- options window --
 	------------------------------------------------------------------------------------------
@@ -218,6 +219,15 @@ function CreateLocalizationInfo()
 		zones128 = {mapHex =  0x41231343, texte = "K\195\182nigreich Gondor", lvl = "140 - 143", souCat = true},
 		zones129 = {mapHex =  0x4124848f, texte = "\195\132u\195\159eres Gondor", lvl = "143 - 145", souCat = true},
 		zones130 = {mapHex =  0x41248399, texte = "Die Schildinseln von Umbar", lvl = "145 - 147", souCat = true},
-		zones131 = {mapHex =  0x41248eef, texte = "Kap von Umbar", lvl = "147 - 150", souCat = true}
+		zones131 = {mapHex =  0x41248eef, texte = "Kap von Umbar", lvl = "147 - 150", souCat = true},
+		zones132 = {mapHex = 0, texte = "Ambar\195\187l", lvl = "150", souCat = true},
+		zones133 = {mapHex = 0, texte = "Kh\195\187d Zagin", lvl = "150", souCat = true},
+		zones134 = {mapHex = 0, texte = "Imh\195\187lar", lvl = "150", souCat = true},
+		zones135 = {mapHex = 0, texte = "Urash D\195\162r", lvl = "150", souCat = true},
+		zones136 = {mapHex = 0, texte = "Adag\195\173m", lvl = "151 - 152", souCat = true},
+		zones137 = {mapHex = 0, texte = "Kigh\195\162n", lvl = "153 - 155", souCat = true},
+		zones138 = {mapHex = 0, texte = "An Sh\195\170ru", lvl = "156 - 158", souCat = true},
+		zones139 = {mapHex = 0, texte = "Idag\195\162l", lvl = "159 - 160", souCat = true},
+		zones140 = {mapHex = 0, texte = "Hatok\195\161li-H\195\188gel", lvl = "160", souCat = true}
         };
 end
