@@ -117,7 +117,7 @@ function CreateMainWindow()
 
 		-- Visual hierarchy: diamond for a main region, bullet for a sub-zone.
 		if(ZonesNamesAndLevel["zones" .. i].souCat == false)then
-			WhereToPlayZoneName[i]:SetText("\226\151\134 " .. ZonesNamesAndLevel["zones" .. i].texte); 
+			WhereToPlayZoneName[i]:SetText("> " .. ZonesNamesAndLevel["zones" .. i].texte); 
 		else
 			WhereToPlayZoneName[i]:SetText("    \226\128\162 " .. ZonesNamesAndLevel["zones" .. i].texte); 
 		end
