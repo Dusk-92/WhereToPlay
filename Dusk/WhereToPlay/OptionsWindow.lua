@@ -15,6 +15,9 @@ windowHeight = 300;
 -- create the options window
 ------------------------------------------------------------------------------------------
 function GenerateOptionsWindow()
+		if(OptionsWindow ~= nil)then
+			return;
+		end
 		OptionsWindow=Turbine.UI.Lotro.GoldWindow(); 
 		OptionsWindow:SetSize(windowWidth, windowHeight); 
 		OptionsWindow:SetText(Strings.PluginOptionsText); 
@@ -56,7 +59,7 @@ function GenerateOptionsWindow()
 			checkBoxKeep:SetParent( OptionsWindow );
 			checkBoxKeep:SetSize(250, 40); 
 			checkBoxKeep:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-			checkBoxKeep:SetText(Strings.PluginOption2);
+			checkBoxKeep:SetText(Strings.PluginOption1);
 			checkBoxKeep:SetPosition(posx + 100, posy);
 			checkBoxKeep:SetVisible(true);
 			if(settings["verbose"]["value"] == true)then
@@ -113,6 +116,7 @@ function GenerateOptionsWindow()
 		ValidateChangesOptions();
 		ClosingTheWindowOptions();
 
+		local hudHidden = false;
 		OptionsWindow.KeyDown=function(sender, args)
 		if ( args.Action == Turbine.UI.Lotro.Action.Escape ) then
 			OptionsWindow:SetVisible(false);
@@ -121,17 +125,29 @@ function GenerateOptionsWindow()
 	
 		-- https://www.lotro.com/forums/showthread.php?493466-How-to-hide-a-window-on-F12&p=6581962#post6581962
 		if ( args.Action == 268435635 ) then
-			hudVisible=not hudVisible;
-			if hudVisible then
+			hudHidden = not hudHidden;
+			if hudHidden then
 				OptionsWindow:SetVisible(false);
 				MainMinimizedIcon:SetVisible(false);
 			else
 				OptionsWindow:SetVisible(settings["isOptionsWindowVisible"]["isOptionsWindowVisible"]);
-				MainMinimizedIcon:SetVisible(true);
+				MainMinimizedIcon:SetVisible(settings["isMinimizeEnabled"]["isMinimizeEnabled"]);
 			end
 		end
 	end
 end
+
+function ShowOptionsWindow()
+	if(OptionsWindow == nil)then
+		GenerateOptionsWindow();
+	end
+	if(checkBoxKeep ~= nil)then
+		checkBoxKeep:SetChecked(settings["verbose"]["value"]);
+	end
+	OptionsWindow:SetVisible(true);
+	settings["isOptionsWindowVisible"]["isOptionsWindowVisible"] = true;
+end
+
 ------------------------------------------------------------------------------------------
 -- boutton valider
 ------------------------------------------------------------------------------------------
@@ -154,8 +170,7 @@ function ValidateChangesOptions()
 
 		OptionsWindow:SetVisible(false);
 		settings["isOptionsWindowVisible"]["isOptionsWindowVisible"] = false;
-		CreateMainWindow();
 		settings["isWindowVisible"]["isWindowVisible"] = true;
-		WhereToPlay:SetVisible(true);
+		RebuildMainWindow();
 	end
 end
