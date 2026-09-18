@@ -7,6 +7,10 @@
 -- create the window
 ------------------------------------------------------------------------------------------
 function CreateMapWindow(i)
+	local zone = ZonesNamesAndLevel["zones" .. i];
+	if(zone == nil or zone.mapHex == nil or zone.mapHex == 0)then
+		return;
+	end
     width = 1044;
     height = 808;
 
