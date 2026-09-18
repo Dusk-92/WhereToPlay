@@ -15,5 +15,5 @@ Plugins[pluginName].Unload = function()
 
 	SaveSettings();
 
-	notification("Unactivated");
+	notification(Strings.PluginUnloaded or "Plugin unloaded");
 end
