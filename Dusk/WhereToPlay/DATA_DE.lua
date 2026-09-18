@@ -744,6 +744,26 @@ datasArtifactTier15 = {1092926431,
 	datasRareNamesTier15 = {"Roter Seestein (selten)"};
 ----
 
+----
+--- datas Tier 16 (Sul Madash)
+-- Resource icon IDs are intentionally left empty until verified from the LOTRO client.
+-- This keeps the T16 farming window safe instead of using guessed IDs.
+datasArtifactTier16 = {};
+datasArtifactLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasOreTier16 = {};
+datasOreLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasWoodTier16 = {};
+datasWoodLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasHideTier16 = {};
+datasHideLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasRareTier16 = {};
+datasRareLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasArtifactNamesTier16 = {};
+datasOreNamesTier16 = {};
+datasWoodNamesTier16 = {};
+datasHideNamesTier16 = {};
+datasRareNamesTier16 = {};
+----
 --[[
 ---- Tier empty
 
