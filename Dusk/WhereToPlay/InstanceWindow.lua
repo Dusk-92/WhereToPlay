@@ -109,7 +109,7 @@ function CreateInstanceWindow(i)
 			WhereToPlayInstancePlace:SetPosition(150, posy + 56); 
 			WhereToPlayInstancePlace:SetText( "" ); 
 			WhereToPlayInstancePlace:SetFont(Turbine.UI.Lotro.Font.BookAntiquaBold19);
-			WhereToPlayInstancePlace:SetBackground(ResourcePath .. "/Instances.tga");
+			WhereToPlayInstancePlace:SetBackground(ResourcePath .. "Instances.tga");
 			WhereToPlayInstancePlace:SetTextAlignment( Turbine.UI.ContentAlignment.MiddleCenter);
 			WhereToPlayInstancePlace:SetForeColor(Turbine.UI.Color.White);
 
