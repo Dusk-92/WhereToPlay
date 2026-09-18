@@ -745,20 +745,20 @@ datasArtifactTier15 = {1092926431,
 -- Resource icon IDs are intentionally left empty until verified from the LOTRO client.
 -- This keeps the T16 farming window safe instead of using guessed IDs.
 datasArtifactTier16 = {};
-datasArtifactLocationTier16 = {"M\195\187r Ghala, les Monts de l'Hatokali"};
+datasArtifactLocationTier16 = {"M\195\187r Ghala (Adagim, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) et les Monts de l'Hatokali"};
 datasOreTier16 = {};
-datasOreLocationTier16 = {"M\195\187r Ghala, les Monts de l'Hatokali"};
+datasOreLocationTier16 = {"M\195\187r Ghala (Adagim, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) et les Monts de l'Hatokali"};
 datasWoodTier16 = {};
-datasWoodLocationTier16 = {"M\195\187r Ghala, les Monts de l'Hatokali"};
+datasWoodLocationTier16 = {"M\195\187r Ghala (Adagim, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) et les Monts de l'Hatokali"};
 datasHideTier16 = {};
-datasHideLocationTier16 = {"M\195\187r Ghala, les Monts de l'Hatokali"};
+datasHideLocationTier16 = {"M\195\187r Ghala (Adagim, Kigh\195\162n, An Sh\195\170ru, Idag\195\162l) et les Monts de l'Hatokali"};
 datasRareTier16 = {};
-datasRareLocationTier16 = {"M\195\187r Ghala, les Monts de l'Hatokali"};
-datasArtifactNamesTier16 = {};
-datasOreNamesTier16 = {};
-datasWoodNamesTier16 = {};
-datasHideNamesTier16 = {};
-datasRareNamesTier16 = {};
+datasRareLocationTier16 = {"M\195\187r Ghala et les Monts de l'Hatokali"};
+datasArtifactNamesTier16 = {"Damaged Murai Artifact", "Ancien registre de M\195\187r Ghala"};
+datasOreNamesTier16 = {"Silvered Ore Deposit", "Rich Silvered Ore Deposit", "Grenats polis"};
+datasWoodNamesTier16 = {"Teak Branches", "Heavy Teak Branches"};
+datasHideNamesTier16 = {"Cuir m\195\187rai bross\195\169"};
+datasRareNamesTier16 = {"Golden Bery"};
 ----
 --[[
 ---- Tier empty
