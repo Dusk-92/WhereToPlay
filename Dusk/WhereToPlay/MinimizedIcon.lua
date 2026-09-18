@@ -8,14 +8,14 @@ import "Turbine.UI.Lotro";
 
 MinimizedIcon = class( Turbine.UI.Window );
 
-function MinimizedIcon:Constructor(image, width, height, callback)
+function MinimizedIcon:Constructor(image, width, height)
 	Turbine.UI.Window.Constructor( self );
 
 	self:SetOpacity( 1 );
 	self:SetVisible(true);
 	self:SetZOrder(10000); -- Always in front
 	self:SetMouseVisible(true);
-	self:SetWantsUpdates(true);
+	self:SetWantsUpdates(false);
 
 	self.passiveImage = image;
 	self.icon = Turbine.UI.Control();
@@ -56,11 +56,9 @@ function MinimizedIcon:Constructor(image, width, height, callback)
 		end
 		if (args.Button == Turbine.UI.MouseButton.Right) then
 			if(settings["isOptionsWindowVisible"]["isOptionsWindowVisible"] == false) then
-				GenerateOptionsWindow();
-				OptionsWindow:SetVisible(true);
+				ShowOptionsWindow();
 				WhereToPlay:SetVisible(false);
 				settings["isWindowVisible"]["isWindowVisible"] = false;
-				settings["isOptionsWindowVisible"]["isOptionsWindowVisible"] = true;
 			else
 				OptionsWindow:SetVisible(false);
 				settings["isOptionsWindowVisible"]["isOptionsWindowVisible"] = false;
@@ -121,7 +119,7 @@ function MinimizedIcon:Constructor(image, width, height, callback)
 		if self.active then
 			if not Turbine.Gameplay.LocalPlayer.GetInstance():IsInCombat() then
 				self.frameCount = self.frameCount +1;
-				if self.frameCount>framesPerActiveImage then
+				if self.frameCount>self.framesPerActiveImage then
 					self.frameCount = 0;
 					self.currentImageIndex = self.currentImageIndex + 1;
 					if self.currentImageIndex>#self.imageTable then
@@ -167,7 +165,7 @@ function MinimizedIcon:SetActive(value)
 end
 
 function MinimizedIcon:SetFramesPerActiveImage(value)
-	framesPerActiveImage = value;
+	self.framesPerActiveImage = value;
 end
 
 function MinimizedIcon:SetActiveTickCallback(callback)
