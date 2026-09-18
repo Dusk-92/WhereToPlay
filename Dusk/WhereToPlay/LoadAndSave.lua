@@ -45,7 +45,6 @@ function LoadSettings()
 	if(settings.isInstanceWindowVisible.value == nil)then settings.isInstanceWindowVisible.value = false; end
 
 	if(type(settings.displayInstances) ~= "table")then settings.displayInstances = {}; end
-	-- Legacy instance browser is incomplete (datasInstances is not shipped), keep it disabled safely.
 	settings.displayInstances.value = false;
 
 	if(type(settings.verbose) ~= "table")then settings.verbose = {}; end
