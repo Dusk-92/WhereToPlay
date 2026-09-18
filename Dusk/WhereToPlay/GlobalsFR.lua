@@ -231,6 +231,6 @@ function CreateLocalizationInfo()
 		zones139 = {mapHex =  0x4126838e, texte = "Kigh\195\162n", lvl = "153 - 155", souCat = true},
 		zones140 = {mapHex =  0x41268388, texte = "An Sh\195\170ru", lvl = "156 - 158", souCat = true},
 		zones141 = {mapHex =  0x41267a38, texte = "Idag\195\162l", lvl = "159 - 160", souCat = true},
-		zones142 = {mapHex =  0x4127182a, texte = "Les Monts de l\'Hatokali", lvl = "160", souCat = true}
+		zones142 = {mapHex =  0x4127182a, texte = "Les Monts de l\'Hatokali", lvl = "160", souCat = false}
         };
 end
