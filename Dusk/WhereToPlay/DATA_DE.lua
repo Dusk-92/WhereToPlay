@@ -714,20 +714,20 @@ datasArtifactTier14 = {1092695114,
 --- datas Tier 15
 datasArtifactTier15 = {1092926431,
 						1092926446};
-	datasArtifactLocationTier15 = {"K\195\182nigliches Gondor, Umbar, Ikorb\195\162n-Tal"};
+	datasArtifactLocationTier15 = {"K\195\182nigreich Gondor, \195\132u\195\159eres Gondor, Schildinseln, Umbar, Ikorb\195\162n-Tal"};
 
 	datasOreTier15 = {1092926432,
 							1092926429,
 							1092926434,
 							1092926436};
-	datasOreLocationTier15 = {"K\195\182nigliches Gondor, Umbar, Ikorb\195\162n-Tal"};
+	datasOreLocationTier15 = {"K\195\182nigreich Gondor, \195\132u\195\159eres Gondor, Schildinseln, Umbar, Ikorb\195\162n-Tal"};
 
 	datasWoodTier15 = {1092926438,
 							1092926445};
-	datasWoodLocationTier15 = {"K\195\182nigliches Gondor, Umbar, Ikorb\195\162n-Tal"};
+	datasWoodLocationTier15 = {"K\195\182nigreich Gondor, \195\132u\195\159eres Gondor, Schildinseln, Umbar, Ikorb\195\162n-Tal"};
 
 	datasHideTier15 = {1092926433};
-	datasHideLocationTier15 = {"K\195\182nigliches Gondor, Umbar, Ikorb\195\162n-Tal"};
+	datasHideLocationTier15 = {"K\195\182nigreich Gondor, \195\132u\195\159eres Gondor, Schildinseln, Umbar, Ikorb\195\162n-Tal"};
 
 	datasRareTier15 = {1092926436};
 	datasRareLocationTier15 = {"Gefunden in Resource Spawns oder Barter"};
