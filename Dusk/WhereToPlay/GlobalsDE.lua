@@ -23,6 +23,7 @@ function CreateLocalizationInfo()
 	Strings.PluginWindowShow = "Fenster wird angezeigt";
 	Strings.PluginWindowHide = "Fenster wird ausgeblendet";
 	Strings.PluginDateUpdate = "18.09.2026";
+	Strings.PluginUnloaded = "Plugin entladen";
 	------------------------------------------------------------------------------------------
 	-- help --
 	------------------------------------------------------------------------------------------
@@ -36,7 +37,7 @@ function CreateLocalizationInfo()
 	Strings.PluginHelp8 = "/wtp toggle - Fenster anzeigen/ausblenden.\n";
 	Strings.PluginHelp9 = "/wtp icon - Symbol anzeigen/ausblenden.\n\n";
 	Strings.PluginHelp10 = "Klicke auf den Namen einer Region, um die Karte der Region zu \195\182ffnen.\n";
-	Strings.PluginHelp11 = "Mit Umschalt + Klick auf das Symbol werden die Optionen angezeigt.\n";
+	Strings.PluginHelp11 = "Mit Rechtsklick auf das Hauptsymbol werden die Optionen angezeigt.\010";
 	Strings.PluginHelp12 = "Klicke auf das kleine Taschen-Symbol, um die sammelbaren Materialien in der Region anzuzeigen.\n";
 	Strings.PluginCloseButton = "Fenster schlie\195\159en";
 	------------------------------------------------------------------------------------------
@@ -209,7 +210,7 @@ function CreateLocalizationInfo()
 		zones118 = {mapHex =  0x41162479, texte = "Die Spaltung Osgiliaths (PvMP)", lvl = "130", souCat = false},
 		zones119 = {mapHex =  0x4121166a, texte = "Berg Gundabad", lvl = "130 - 140", souCat = false},
 		zones120 = {mapHex =  0x4121166f, texte = "Bingen des Gundabad", lvl = "130 - 131", souCat = true},
-		zones121 = {mapHex =  0x41211669, texte = "M\195\161ttugard", lvl = "132 - 133", souCat = true},
+		zones121 = {mapHex =  0x41211669, texte = "M\195\161ttugard", lvl = "130 - 132", souCat = true},
 		zones122 = {mapHex =  0x4121166d, texte = "Tiefengier", lvl = "133 - 134", souCat = true},
 		zones123 = {mapHex =  0x4121166c, texte = "Steinschlundloch", lvl = "134 - 135", souCat = true},
 		zones124 = {mapHex =  0x41211668, texte = "C\195\162r Bronach", lvl = "135 - 136", souCat = true},
