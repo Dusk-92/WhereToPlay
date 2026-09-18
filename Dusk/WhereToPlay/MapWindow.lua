@@ -24,6 +24,7 @@ function CreateMapWindow(i)
     MapWindow:SetBackColor(Turbine.UI.Color(0.0, 0, 0, 0));
     MapWindow:SetText(ZonesNamesAndLevel["zones" .. i].texte .. "    lvl : " .. ZonesNamesAndLevel["zones" .. i].lvl);
     MapWindow:SetVisible(false);
+    settings["isMapWindowVisible"]["value"] = true;
     MapWindow:SetWantsKeyEvents(true);
 
     mapLabel = Turbine.UI.Label();
@@ -62,6 +63,7 @@ function CreateMapWindow(i)
 
     MapWindow.KeyDown=function(sender, args)
 		if ( args.Action == Turbine.UI.Lotro.Action.Escape ) then
+			settings["isMapWindowVisible"]["value"] = false;
 			MapWindow:SetVisible(false);
 		end
 	end
