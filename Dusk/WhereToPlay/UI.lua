@@ -10,7 +10,7 @@
 -- create the main window
 ------------------------------------------------------------------------------------------
 function CreateMainWindow()
-	local windowWidth = 500;
+	local windowWidth = 540;
 	local heightWind = 500;
 
 	WhereToPlay=Turbine.UI.Lotro.GoldWindow(); 
@@ -29,16 +29,16 @@ function CreateMainWindow()
 
 	WhereToPlay:SetPosition(settings["windowPosition"]["xPos"], settings["windowPosition"]["yPos"]);
 	
-	listbox = Turbine.UI.ListBox();
+	local listbox = Turbine.UI.ListBox();
     listbox:SetParent( WhereToPlay );
     --listbox:SetBackColor( Turbine.UI.Color.Red );
 	listbox:SetSize(windowWidth - 45, 400);
 	listbox:SetPosition(20, 70);
-	listbox:IsMouseVisible(true);
+	listbox:SetMouseVisible(true);
 	listbox:SetZOrder(10);
 
 
-	WhereToPlayerDatas=Turbine.UI.Label(); 
+	local WhereToPlayerDatas=Turbine.UI.Label(); 
 	WhereToPlayerDatas:SetParent(WhereToPlay); 
 	WhereToPlayerDatas:SetSize(200,20); 
 	WhereToPlayerDatas:SetPosition(10, 40); 
@@ -50,7 +50,7 @@ function CreateMainWindow()
 	DisplayRace(windowWidth);
 	DisplayClass(windowWidth);
 
-	WhereToPlayerDatas=Turbine.UI.Label(); 
+	local WhereToPlayerDatas=Turbine.UI.Label(); 
 	WhereToPlayerDatas:SetParent(WhereToPlay); 
 	WhereToPlayerDatas:SetSize(50,20); 
 	WhereToPlayerDatas:SetPosition(windowWidth/2 + 90, 40); 
@@ -59,7 +59,7 @@ function CreateMainWindow()
 	WhereToPlayerDatas:SetForeColor(Turbine.UI.Color.White);
 	WhereToPlayerDatas:SetText("lvl");
 
-	WhereToPlayerDatas=Turbine.UI.Label(); 
+	local WhereToPlayerDatas=Turbine.UI.Label(); 
 	WhereToPlayerDatas:SetParent(WhereToPlay); 
 	WhereToPlayerDatas:SetSize(50,20); 
 	WhereToPlayerDatas:SetPosition(windowWidth/2 + 150, 40); 
@@ -71,9 +71,9 @@ function CreateMainWindow()
 	------------------------------------------------------------------------------------------
 	-- box bleu fond
 	------------------------------------------------------------------------------------------
-	WhereToPlayerDatas=Turbine.UI.Label(); 
+	local WhereToPlayerDatas=Turbine.UI.Label(); 
 	WhereToPlayerDatas:SetParent(WhereToPlay); 
-	WhereToPlayerDatas:SetSize(430,36); 
+	WhereToPlayerDatas:SetSize(470,36); 
 	WhereToPlayerDatas:SetPosition(25, 32); 
 	WhereToPlayerDatas:SetText(""); 
 	WhereToPlayerDatas:SetBackColor(Turbine.UI.Color(1, .2, .5, .75));
@@ -81,9 +81,9 @@ function CreateMainWindow()
 	------------------------------------------------------------------------------------------
 	-- box bleu cover black
 	------------------------------------------------------------------------------------------
-	WhereToPlayerDatas=Turbine.UI.Label(); 
+	local WhereToPlayerDatas=Turbine.UI.Label(); 
 	WhereToPlayerDatas:SetParent(WhereToPlay); 
-	WhereToPlayerDatas:SetSize(428,34); 
+	WhereToPlayerDatas:SetSize(468,34); 
 	WhereToPlayerDatas:SetPosition(26, 33); 
 	WhereToPlayerDatas:SetText(""); 
 	WhereToPlayerDatas:SetBackColor(Turbine.UI.Color.Black);
@@ -103,8 +103,8 @@ function CreateMainWindow()
 
 	for i=1, NbrEntries do
 
-		listItem = Turbine.UI.Control();
-        listItem:SetSize( 460, 25 );
+		local listItem = Turbine.UI.Control();
+        listItem:SetSize( 500, 25 );
 		listItem:SetMouseVisible(true);
 
 
@@ -127,7 +127,7 @@ function CreateMainWindow()
 				WhereToPlayFarmPlaceTier[i]=Turbine.UI.Label(); 
 				WhereToPlayFarmPlaceTier[i]:SetParent(listItem); 
 				WhereToPlayFarmPlaceTier[i]:SetSize(40,20); 
-				WhereToPlayFarmPlaceTier[i]:SetPosition(288, posy + 1);
+				WhereToPlayFarmPlaceTier[i]:SetPosition(320, posy + 1);
 				local tier = ReturnTier(i);
 				if(tier == 101)then
 					tier = 10;
@@ -148,12 +148,12 @@ function CreateMainWindow()
 				WhereToPlayFarmPlace[i]=Turbine.UI.Label(); 
 				WhereToPlayFarmPlace[i]:SetParent(listItem); 
 				WhereToPlayFarmPlace[i]:SetSize(20,20); 
-				WhereToPlayFarmPlace[i]:SetPosition(308, posy); 
+				WhereToPlayFarmPlace[i]:SetPosition(350, posy); 
 				WhereToPlayFarmPlace[i]:SetText(""); 
 				WhereToPlayFarmPlace[i]:SetBackground(0x4114B0F0); 
 				WhereToPlayFarmPlace[i]:SetBlendMode(Turbine.UI.BlendMode.Overlay);
 
-				DisplaySmallLabel(i, tier, 308, posy, listItem);
+				DisplaySmallLabel(i, tier, 350, posy, listItem);
 			end
 		end
 
@@ -164,13 +164,13 @@ function CreateMainWindow()
 				WhereToPlayInstancePlace[i]:SetParent(listItem); 
 				WhereToPlayInstancePlace[i]:SetSize(20,20); 
 				if(settings["verbose"]["value"] == true)then
-					posxButton = 278;
+					posxButton = 380;
 				else
-					posxButton = 308;
+					posxButton = 350;
 				end
 				WhereToPlayInstancePlace[i]:SetPosition(posxButton, posy); 
 				WhereToPlayInstancePlace[i]:SetText(""); 
-				WhereToPlayInstancePlace[i]:SetBackground(ResourcePath .. "/Instances.tga"); 
+				WhereToPlayInstancePlace[i]:SetBackground(ResourcePath .. "Instances.tga"); 
 				WhereToPlayInstancePlace[i]:SetBlendMode(Turbine.UI.BlendMode.Overlay);
 
 				DisplaySmallLabelForInstanse(i, posxButton, posy, listItem);
@@ -196,8 +196,9 @@ function CreateMainWindow()
 		------------------------------------------------------------------------------------------
 		WhereToPlayZoneName[i].MouseClick = function()
 			--Turbine.Shell.WriteLine("Click Numero " .. tostring(i));
-			if(settings["isMapWindowVisible"]["value"] == true)then
+			if(settings["isMapWindowVisible"]["value"] == true and MapWindow ~= nil)then
 				MapWindow:SetVisible(false);
+				settings["isMapWindowVisible"]["value"] = false;
 			end
 			if(ZonesNamesAndLevel["zones" .. i].mapHex ~= nil and ZonesNamesAndLevel["zones" .. i].mapHex ~= 0)then
 				CreateMapWindow(i);
@@ -205,10 +206,10 @@ function CreateMainWindow()
 			end
 		end
 
-		WhereToPlayZoneLvl=Turbine.UI.Label(); 
+		local WhereToPlayZoneLvl=Turbine.UI.Label(); 
 		WhereToPlayZoneLvl:SetParent(listItem); 
 		WhereToPlayZoneLvl:SetSize(100,20); 
-		WhereToPlayZoneLvl:SetPosition(posx + 328, posy); 
+		WhereToPlayZoneLvl:SetPosition(posx + 380, posy); 
 		WhereToPlayZoneLvl:SetTextAlignment(Turbine.UI.ContentAlignment.Middleleft); 
 		WhereToPlayZoneLvl:SetFont(Turbine.UI.Lotro.Font.BookAntiquaBold19);
 		WhereToPlayZoneLvl:SetForeColor(Turbine.UI.Color.Gold);
@@ -225,7 +226,7 @@ function CreateMainWindow()
 	end
 
 
-	vscrollListBox=Turbine.UI.Lotro.ScrollBar();
+	local vscrollListBox=Turbine.UI.Lotro.ScrollBar();
 	vscrollListBox:SetParent(WhereToPlay);
 	vscrollListBox:SetOrientation(Turbine.UI.Orientation.Vertical);
 	vscrollListBox:SetPosition(windowWidth-20, 70);
