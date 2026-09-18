@@ -198,8 +198,10 @@ function CreateMainWindow()
 			if(settings["isMapWindowVisible"]["value"] == true)then
 				MapWindow:SetVisible(false);
 			end
-			CreateMapWindow(i);
-			MapWindow:SetVisible(true);
+			if(ZonesNamesAndLevel["zones" .. i].mapHex ~= nil and ZonesNamesAndLevel["zones" .. i].mapHex ~= 0)then
+				CreateMapWindow(i);
+				MapWindow:SetVisible(true);
+			end
 		end
 
 		WhereToPlayZoneLvl=Turbine.UI.Label(); 
