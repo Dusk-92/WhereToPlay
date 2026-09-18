@@ -13,6 +13,13 @@ end
 ------------------------------------------------------------------------------------------
 Plugins[pluginName].Unload = function()	
 
+	if(type(WhereToPlayDetachPlayerEvents) == "function")then
+		WhereToPlayDetachPlayerEvents();
+	end
+	if(WhereToPlay ~= nil)then
+		WhereToPlay:SetWantsUpdates(false);
+	end
+
 	SaveSettings();
 
 	notification(Strings.PluginUnloaded or "Plugin unloaded");
