@@ -33,11 +33,9 @@ function WhereToPlayCommand:Execute( command, arguments )
 ------------------------------------------------------------------------------------------
 	elseif ( arguments == "options" ) then
 		Turbine.Shell.WriteLine(rgb["start"] .. Strings.PluginName .. rgb["clear"] .. " - " .. Strings.PluginOptionShowWindow);
-		GenerateOptionsWindow();
-		OptionsWindow:SetVisible(true);
+		ShowOptionsWindow();
 		WhereToPlay:SetVisible(false);
 		settings["isWindowVisible"]["isWindowVisible"] = false;
-		settings["isOptionsWindowVisible"]["isOptionsWindowVisible"] = true;
 ------------------------------------------------------------------------------------------
 -- esc command--
 ------------------------------------------------------------------------------------------
@@ -88,6 +86,8 @@ function WhereToPlayCommand:Execute( command, arguments )
 			settings["isMinimizeEnabled"]["isMinimizeEnabled"] = true;
 			SaveSettings();
 		end
+	else
+		commandsHelp();
 	end
 end
 ------------------------------------------------------------------------------------------
