@@ -126,7 +126,7 @@ function GenerateOptionsWindow()
 				OptionsWindow:SetVisible(false);
 				MainMinimizedIcon:SetVisible(false);
 			else
-				OptionsWindow:SetVisible(settings.isOptionsWindowVisible);
+				OptionsWindow:SetVisible(settings["isOptionsWindowVisible"]["isOptionsWindowVisible"]);
 				MainMinimizedIcon:SetVisible(true);
 			end
 		end
