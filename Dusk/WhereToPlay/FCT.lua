@@ -300,9 +300,9 @@ function ReturnTier(i)
 		val = 13;
 	elseif(i == 117 or i == 118 or i == 119 or i == 120 or i == 121 or i == 122 or i == 123 or i == 124 or i == 125 or i == 126 or i == 127 )then
 		val = 14;
-	elseif(i >= 128 and i <= 135)then
+	elseif(i >= 128 and i <= 136)then
 		val = 15;
-	elseif(i >= 136 and i <= 140)then
+	elseif(i >= 137 and i <= 142)then
 		val = 16;
 	end
 
