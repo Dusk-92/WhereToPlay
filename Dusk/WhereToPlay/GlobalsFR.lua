@@ -71,7 +71,7 @@ function CreateLocalizationInfo()
 	Strings.PluginProfTier13 = "Minas Ithil";
 	Strings.PluginProfTier14 = "Gundabad";
 	Strings.PluginProfTier15 = "Umbar";
-	Strings.PluginProfTier16 = "Sul Madash";
+	Strings.PluginProfTier16 = "Sul Mad\195\161sh";
 	------------------------------------------------------------------------------------------
 	-- Instances names --
 	------------------------------------------------------------------------------------------
