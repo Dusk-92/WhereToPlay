@@ -27,3 +27,10 @@ MainMinimizedIcon.PositionChanged = function()
 	settings["IconPosition"]["xPosIcon"] = MainMinimizedIcon:GetLeft();
 	settings["IconPosition"]["yPosIcon"] = MainMinimizedIcon:GetTop();
 end
+
+------------------------------------------------------------------------------------------
+-- Event-driven player updates (no permanent per-frame polling)
+------------------------------------------------------------------------------------------
+if(type(WhereToPlayAttachPlayerEvents) == "function")then
+	WhereToPlayAttachPlayerEvents();
+end
