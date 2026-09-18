@@ -18,7 +18,7 @@ function CreateMapWindow(i)
 
     MapWindow=Turbine.UI.Lotro.GoldWindow(); 
     MapWindow:SetSize(windowWidth, windowHeight); 
-    MapWindow:SetPosition(windowWidth / 2 - width / 2, (windowHeight / 2 - height / 2) - 20);
+    MapWindow:SetPosition(math.max(0, windowWidth / 2 - width / 2), math.max(0, (windowHeight / 2 - height / 2) - 20));
     MapWindow:SetSize(width, height);
     MapWindow:SetBlendMode(Turbine.UI.BlendMode.Undefined);
     MapWindow:SetBackColor(Turbine.UI.Color(0.0, 0, 0, 0));
