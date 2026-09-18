@@ -90,11 +90,15 @@ function ClosingTheWindowOptions()
 	end
 end
 function CloseInstanceWindow()
-	InstanceWindow:SetVisible(false);
+	if(InstanceWindow ~= nil)then
+		InstanceWindow:SetVisible(false);
+	end
     settings["isInstanceWindowVisible"]["value"] = false;
 end
 function CloseFarmWindow()
-    FarmWindow:SetVisible(false);
+	if(FarmWindow ~= nil)then
+		FarmWindow:SetVisible(false);
+	end
     settings["isFarmWindowVisible"]["value"] = false;
 end
 ------------------------------------------------------------------------------------------
@@ -414,6 +418,11 @@ end
 --function to define the label for the instance
 ------------------------------------------------------------------------------------------
 function DisplaySmallLabelForInstanse(i, posx, posy, whereToDisplay)
+	-- Legacy instance feature has no datasInstances table in the current package.
+	if(type(datasInstances) ~= "table")then
+		return;
+	end
+
 
 	local buttonDefineHouseLocationPersonalFaux = Turbine.UI.Control();
 	buttonDefineHouseLocationPersonalFaux:SetParent( whereToDisplay );
@@ -430,7 +439,9 @@ function DisplaySmallLabelForInstanse(i, posx, posy, whereToDisplay)
 					InstanceWindow:SetVisible(false);
 				end
 				CreateInstanceWindow(i);
-				InstanceWindow:SetVisible(true);
+				if(InstanceWindow ~= nil)then
+					InstanceWindow:SetVisible(true);
+				end
 			end
 		end
 	end
