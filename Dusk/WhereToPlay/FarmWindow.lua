@@ -9,12 +9,11 @@ local centerLabelStats = {};
 -- create the window
 ------------------------------------------------------------------------------------------
 function CreateFarmWindow(i)
-    width = 400;
-    height = 770;
+    local width = 400;
+    local height = 770;
 
-	tier = ReturnTier(i);
 
-    windowWidth, windowHeight = Turbine.UI.Display:GetSize();
+    local windowWidth, windowHeight = Turbine.UI.Display:GetSize();
 
     FarmWindow=Turbine.UI.Lotro.GoldWindow(); 
     FarmWindow:SetSize(windowWidth, windowHeight); 
@@ -30,7 +29,7 @@ function CreateFarmWindow(i)
     local posx = 20;
     local posy = 40;
 
-	WhereToPlayerDatas=Turbine.UI.Label(); 
+	local WhereToPlayerDatas=Turbine.UI.Label(); 
 	WhereToPlayerDatas:SetParent(FarmWindow); 
 	WhereToPlayerDatas:SetSize(380,40); 
 	WhereToPlayerDatas:SetPosition(FarmWindow:GetWidth()/2 - 190, posy); 
@@ -128,7 +127,7 @@ function CreateFarmWindow(i)
 	------------------------------------------------------------------------------------------
 	-- box bleu fond
 	------------------------------------------------------------------------------------------
-	WhereToPlayerDatas=Turbine.UI.Label(); 
+	local WhereToPlayerDatas=Turbine.UI.Label(); 
 	WhereToPlayerDatas:SetParent(FarmWindow); 
 	WhereToPlayerDatas:SetSize(360,46); 
 	WhereToPlayerDatas:SetPosition(20, posy); 
@@ -138,7 +137,7 @@ function CreateFarmWindow(i)
 	------------------------------------------------------------------------------------------
 	-- box bleu cover black
 	------------------------------------------------------------------------------------------
-	WhereToPlayerDatas=Turbine.UI.Label(); 
+	local WhereToPlayerDatas=Turbine.UI.Label(); 
 	WhereToPlayerDatas:SetParent(FarmWindow); 
 	WhereToPlayerDatas:SetSize(358,44); 
 	WhereToPlayerDatas:SetPosition(21, posy+1); 
@@ -166,7 +165,7 @@ function CreateFarmWindow(i)
 	------------------------------------------------------------------------------------------
 	-- box red fond
 	------------------------------------------------------------------------------------------
-	WhereToPlayerDatas=Turbine.UI.Label(); 
+	local WhereToPlayerDatas=Turbine.UI.Label(); 
 	WhereToPlayerDatas:SetParent(FarmWindow); 
 	WhereToPlayerDatas:SetSize(360,176); 
 	WhereToPlayerDatas:SetPosition(20, posy); 
@@ -177,7 +176,7 @@ function CreateFarmWindow(i)
 	------------------------------------------------------------------------------------------
 	-- box bleu cover black
 	------------------------------------------------------------------------------------------
-	WhereToPlayerDatas=Turbine.UI.Label(); 
+	local WhereToPlayerDatas=Turbine.UI.Label(); 
 	WhereToPlayerDatas:SetParent(FarmWindow); 
 	WhereToPlayerDatas:SetSize(358,174); 
 	WhereToPlayerDatas:SetPosition(21, posy+1); 
@@ -200,7 +199,7 @@ function CreateFarmWindow(i)
 	------------------------------------------------------------------------------------------
 	-- Button to close the window
 	------------------------------------------------------------------------------------------
-    buttonValider = Turbine.UI.Lotro.GoldButton();
+    local buttonValider = Turbine.UI.Lotro.GoldButton();
 	buttonValider:SetParent( FarmWindow );
 	buttonValider:SetPosition(FarmWindow:GetWidth()/2 - 125, FarmWindow:GetHeight() - 35);
 	buttonValider:SetSize( 300, 34 );
