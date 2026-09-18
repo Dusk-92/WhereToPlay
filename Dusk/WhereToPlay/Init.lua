@@ -15,6 +15,7 @@ settingsFileName = "WhereToPlay_Settings";
 -- Default settings --
 ------------------------------------------------------------------------------------------
 settings = {
+    settingsVersion = 140,
     windowPosition = { 
         xPos = 500, 
         yPos = 500 
@@ -24,7 +25,7 @@ settings = {
         yPosIcon = 500 
     },
     isMinimizeEnabled = { 
-        isMinimizeEnabled = false 
+        isMinimizeEnabled = true 
     },
     isWindowVisible = { 
         isWindowVisible = true 
