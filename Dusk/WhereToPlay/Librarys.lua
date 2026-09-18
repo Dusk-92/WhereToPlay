@@ -23,6 +23,10 @@ elseif Turbine.Engine.GetLanguage() == Turbine.Language.French then
 elseif Turbine.Engine.GetLanguage() == Turbine.Language.English then
 	import "Dusk.WhereToPlay.GlobalsEN";
 	GLocale = "en";
+else
+	-- Fallback for any unsupported/unknown client language.
+	import "Dusk.WhereToPlay.GlobalsEN";
+	GLocale = "en";
 end
 ------------------------------------------------------------------------------------------
 -- Import Utility --
@@ -39,10 +43,6 @@ import "Dusk.WhereToPlay.Init";
 import "Dusk.WhereToPlay.Activation";
 import "Dusk.WhereToPlay.PlayerStats";
 ------------------------------------------------------------------------------------------
--- Import Scripts --
-------------------------------------------------------------------------------------------
-import "Dusk.WhereToPlay.Main";
-------------------------------------------------------------------------------------------
 -- Import UI elements --
 ------------------------------------------------------------------------------------------
 import "Dusk.WhereToPlay.UI";
@@ -54,6 +54,8 @@ if Turbine.Engine.GetLanguage() == Turbine.Language.German then
 elseif Turbine.Engine.GetLanguage() == Turbine.Language.French then
 	import "Dusk.WhereToPlay.DATA_FR";
 elseif Turbine.Engine.GetLanguage() == Turbine.Language.English then
+	import "Dusk.WhereToPlay.DATA_EN";
+else
 	import "Dusk.WhereToPlay.DATA_EN";
 end
 import "Dusk.WhereToPlay.FarmWindow";
