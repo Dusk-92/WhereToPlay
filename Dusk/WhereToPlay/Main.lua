@@ -22,7 +22,10 @@ CreateMainWindow();
 WhereToPlay:SetVisible(settings["isWindowVisible"]["isWindowVisible"]);
 
 MainMinimizedIcon = MinimizedIcon(Images.MinimizedIcon, 32, 32);
-local iconX, iconY = ClampToScreen(settings["IconPosition"]["xPosIcon"], settings["IconPosition"]["yPosIcon"], 32, 32);\nMainMinimizedIcon:SetPosition(iconX, iconY);\nsettings["IconPosition"]["xPosIcon"] = iconX;\nsettings["IconPosition"]["yPosIcon"] = iconY;
+local iconX, iconY = ClampToScreen(settings["IconPosition"]["xPosIcon"], settings["IconPosition"]["yPosIcon"], 32, 32);
+MainMinimizedIcon:SetPosition(iconX, iconY);
+settings["IconPosition"]["xPosIcon"] = iconX;
+settings["IconPosition"]["yPosIcon"] = iconY;
 MainMinimizedIcon:SetVisible(settings["isMinimizeEnabled"]["isMinimizeEnabled"]);
 MainMinimizedIcon.PositionChanged = function()
 	settings["IconPosition"]["xPosIcon"] = MainMinimizedIcon:GetLeft();
