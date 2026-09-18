@@ -740,6 +740,26 @@ datasArtifactTier15 = {1092926431,
 	datasRareNamesTier15 = {"Pierre marine rouge (rare)"};
 ----
 
+----
+--- datas Tier 16 (Sul Madash)
+-- Resource icon IDs are intentionally left empty until verified from the LOTRO client.
+-- This keeps the T16 farming window safe instead of using guessed IDs.
+datasArtifactTier16 = {};
+datasArtifactLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasOreTier16 = {};
+datasOreLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasWoodTier16 = {};
+datasWoodLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasHideTier16 = {};
+datasHideLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasRareTier16 = {};
+datasRareLocationTier16 = {"M\195\187r Ghala, Pahar Hatokali"};
+datasArtifactNamesTier16 = {};
+datasOreNamesTier16 = {};
+datasWoodNamesTier16 = {};
+datasHideNamesTier16 = {};
+datasRareNamesTier16 = {};
+----
 --[[
 ---- Tier empty
 
@@ -813,7 +833,7 @@ datasInstances[1] = {"Great Barrow: The Maze", -- Name
 					"Daily", -- Challenge
 					"Located in Southern Barrow-downs, see also the Great Barrow"}; -- note
 
-datasInstances[2] = {"Great Barrow: Thadúr", -- Name
+datasInstances[2] = {"Great Barrow: ThadÃºr", -- Name
 					"Thadur", -- Abbreviation
 					"Bree-land", -- region
 					"20-130", -- Level
@@ -831,7 +851,7 @@ datasInstances[3] = {"Great Barrow: Sambrog", -- Name
 					"1", -- Tier
 					"Fellowship", -- Group
 					"Free", -- Availability
-					"Maze and Thadúr", -- Prequis
+					"Maze and ThadÃºr", -- Prequis
 					"Daily", -- Challenge
 					"Located in Southern Barrow-downs, see also the Great Barrow"}; -- note
 
